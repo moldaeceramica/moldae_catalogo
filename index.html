@@ -41,7 +41,7 @@
 <body class="bg-fundo text-texto">
 
 <!-- ==================================================
-     ✅ PRODUTOS — EDITE AQUI DIRETO
+     ✅ PRODUTOS — TODOS OS 24 CADASTRADOS
      ================================================== -->
 <script>
 const DADOS_SITE = {
@@ -55,6 +55,7 @@ const DADOS_SITE = {
         corSecundaria: '#8b5a2b'
     },
     produtos: [
+        // === 1-4 primeiros ===
         {
             id: 1,
             nome: 'Molde Manteigueira Francesa',
@@ -68,13 +69,171 @@ const DADOS_SITE = {
             descricao: 'Suporte para amostras de esmalte. (personalizável) Para disquinhos de até 55mm',
             categoria: 'ferramentas',
             imagem: 'https://scontent-gru2-2.xx.fbcdn.net/v/t39.30808-6/825353316_10235660281072374_1576819588531748826_n.jpg?stp=dst-jpg_tt6&cstp=mx1024x765&ctp=s1024x765&_nc_cat=102&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeF4K4doXO2PccNKeso9kOmSQIw-OTIi7P9AjD45MiLs_xFqe8uHaM5YP2Kt4I6LRfs&_nc_ohc=ruph4FwrI1gQ7kNvwENjuC9&_nc_oc=AdpocXh27CU0AY2qBaRposmX9tuNDo68ZaaHz1KFhMWxBRpOXNqJNpWGkNbpA2CZoII&_nc_zt=23&_nc_ht=scontent-gru2-2.xx&_nc_gid=OhW3ZR4tBHFA7ICVSggwHw&_nc_ss=7b2a8&oh=00_AQM60qV0Ewc2TdXXoPn_Gi7mVanBvaG1QVtzeBHM0hIXaQ&oe=6AC5783C'
+        },
+        {
+            id: 3,
+            nome: 'Suporte para amostras de esmalte',
+            descricao: 'Suporte para amostras de esmalte. (Formato cartão) Personalizável com sua logo/nome',
+            categoria: 'ferramentas',
+            imagem: 'https://scontent-gru2-2.xx.fbcdn.net/v/t39.30808-6/825859712_10235660551999147_4705664171741068315_n.jpg?stp=dst-jpg_tt6&cstp=mx1024x765&ctp=s1024x765&_nc_cat=105&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeEKb3VVjhC2Ua9tzOPPWui4BrffnZfmhG4Gt9-dl-aEbpTyF61iD2p0RjHEJN2zx8Q&_nc_ohc=TJ9_a-4eeNsQ7kNvwHdks8m&_nc_oc=AdoEQwt6A3SVQYhM_OWVk2EQ3b9Vdlyh9LVQci4uOis4caPQAWpwvSUeEPSnRfOmUM4&_nc_zt=23&_nc_ht=scontent-gru2-2.xx&_nc_gid=NRl10iHTlMTZpSBPFYZ_NA&_nc_ss=7b2a8&oh=00_AQPVNFemE0gHvptfMuaXAnrabacE_s_PvZ9j8NBF0TyRmg&oe=6AC58061'
+        },
+        {
+            id: 4,
+            nome: 'Molde Bowl Banana ** Exclusivo',
+            descricao: 'Bowl Banana.\nModelo exclusivo Moldaê\nTamanho: 20cm',
+            categoria: 'moldes',
+            imagem: 'https://scontent-gru1-2.xx.fbcdn.net/v/t39.30808-6/825340300_10235624097327803_6440314713724064118_n.jpg?stp=dst-jpg_tt6&cstp=mx768x1024&ctp=s768x1024&_nc_cat=110&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeHX-HjPftCLdW6xAlxwrc5t1Z3wBntGgZXVnfAGe0aBlc3XgFmEUwfX8C6R_tiR0Ss&_nc_ohc=qs7hWhNDC0sQ7kNvwGILOik&_nc_oc=AdqggXuvhR5JOyiEbKZDL5MHk5PBXWvK0Hg7akA8fC53EnWZLPV2DUZS0EkvxUdXB8w&_nc_zt=23&_nc_ht=scontent-gru1-2.xx&_nc_gid=x5ETr9QykEPnDLQwttPrMw&_nc_ss=7b2a8&oh=00_AQMdBZasa6Ii6qGyIDLnnbjBVXhUhn4CgoKe_VrJGE32tQ&oe=6AC5A224'
+        },
+        // === 5-10 enviados ===
+        {
+            id: 5,
+            nome: 'Kit Moldes Para Conjunto Café/Lanche',
+            descricao: 'Kit de moldes para montar conjunto. Acompanha: 3 moldes.',
+            categoria: 'conjuntos',
+            imagem: 'https://scontent-gru1-2.xx.fbcdn.net/v/t39.30808-6/817846324_10235622387685063_401069051551442139_n.jpg?stp=dst-jpg_tt6&cstp=mx768x1024&ctp=s768x1024&_nc_cat=100&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeHCbB4-HcAiOJIZd33mor6cfia616N2B0p-JrrXo3YHSljldBQZX5WZMGYVuwbin64&_nc_ohc=j2-wIpxYUy4Q7kNvwHAHQ4t&_nc_oc=Adrxe6NbCBBWDZZgIcK1lIEebl_MLpZA-jVX5ygHNbYkgw4yznyEYwreUK-Ar0FLTvw&_nc_zt=23&_nc_ht=scontent-gru1-2.xx&_nc_gid=6TcEdg11hWrx6y1GfhTSIw&_nc_ss=7b2a8&oh=00_AQMPu1CA9pscfA7zXoxb41CmuGjB2wgkz5WZNgPHNPt5iw&oe=6AC590C2'
+        },
+        {
+            id: 6,
+            nome: 'Molde Copo + Cortador de Placa',
+            descricao: 'Molde Para Copo + Cortador para Placa de argila',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/US1ed3a051e375c9/design/d849cc72d1970068.jpeg?x-oss-process=image/resize,w_1000/format,webp'
+        },
+        {
+            id: 7,
+            nome: 'Molde Para Travessa Rasa',
+            descricao: 'Molde para travessa rasa',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/USa1febb7d889c32/design/2026-01-06_7b99caa698c4c8.jpeg?x-oss-process=image/resize,w_1000/format,webp'
+        },
+        {
+            id: 8,
+            nome: 'Molde e Cortador Formato Coração',
+            descricao: 'Molde para prato em formato de coração. Acompanha cortador',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/DSM00000002278521/design/2026-01-21_te83syfj0t3r4_img_4344.jpg?x-oss-process=image/resize,w_1000/format,webp'
+        },
+        {
+            id: 9,
+            nome: 'Cortador para Brinco de Cerâmica',
+            descricao: 'Cortador para Brincos. Acompanha 2 peças.',
+            categoria: 'cortadores',
+            imagem: 'https://scontent-gru2-1.xx.fbcdn.net/v/t39.30808-6/829797686_10235695571554614_8010631770598960752_n.jpg?stp=dst-jpg_tt6&cstp=mx1195x896&ctp=s1195x896&_nc_cat=109&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeGj2apH9aBiFXkDBQF_95FAfqmlWvfcKTh-qaVa99wpOB0QQGpdxKz556gttqLoL5Y&_nc_ohc=6BSdr6eKLBoQ7kNvwFEfzlM&_nc_oc=Adq5z32qCeB-nxeWuRnyqzuwhsj54UVJmy4PYdjhQv6ZDcXbKH2LrvTsBlxHMidmitc&_nc_zt=23&_nc_ht=scontent-gru2-1.xx&_nc_gid=IYtGwLafqW1LTdA8ngCPow&_nc_ss=7b2a8&oh=00_AQNtKChoAJORsnmoBJSQKZpVg8M1VCRACCLK4SwVvZLZnQ&oe=6AC5A82E'
+        },
+        {
+            id: 10,
+            nome: 'Kit Anel Pé para Copos, Xícaras e Canecas',
+            descricao: 'Conjunto composto por 3 peças em 2 tipos diferentes de pezinhos.',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/USef6f6f8e79fe33/design/e6ad76864932dba7.jpg?x-oss-process=image/resize,w_1000/format,webp'
+        },
+        // === 11-12 ===
+        {
+            id: 11,
+            nome: 'Kit 6 Moldes para Alças de Canecas e Xícaras',
+            descricao: '6 Moldes Plásticos para Alça de Caneca de Cerâmica',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/USf64dd21ac1975/design/4e8936551aac8032.jpg?x-oss-process=image/resize,w_1000/format,webp'
+        },
+        {
+            id: 12,
+            nome: '21 peças de Molde de Tigela de Cerâmica MEGAPACK 30-50mm de Altura',
+            descricao: 'Combo completo com 21 moldes de tigelas nas medidas de 30 ~ 50mm. Acompanha base.',
+            categoria: 'conjuntos',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/USaa8a6ba5a4f614/design/e0dc9b60a9ee596e.jpg?x-oss-process=image/resize,w_1000/format,webp'
+        },
+        // === 13-18 — moldes de tigela ===
+        {
+            id: 13,
+            nome: 'Molde Tigela 1: 30×120mm',
+            descricao: 'Tigela 1: 30×120mm',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/comment/20260919/2326575514/b52712da1e78c9d4.jpg?x-oss-process=image/format,webp'
+        },
+        {
+            id: 14,
+            nome: 'Molde Tigela 2: 50×170mm',
+            descricao: 'Tigela 2: 50×170mm',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/comment/20260919/2326575514/b52712da1e78c9d4.jpg?x-oss-process=image/format,webp'
+        },
+        {
+            id: 15,
+            nome: 'Molde Tigela 3: 50×160mm',
+            descricao: 'Tigela 3: 50×160mm',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/comment/20260919/2326575514/b52712da1e78c9d4.jpg?x-oss-process=image/format,webp'
+        },
+        {
+            id: 16,
+            nome: 'Molde Tigela 4: 50×150mm',
+            descricao: 'Tigela 4: 50×150mm',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/comment/20260919/2326575514/b52712da1e78c9d4.jpg?x-oss-process=image/format,webp'
+        },
+        {
+            id: 17,
+            nome: 'Molde Tigela 5: 50×140mm',
+            descricao: 'Tigela 5: 50×140mm',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/comment/20260919/2326575514/b52712da1e78c9d4.jpg?x-oss-process=image/format,webp'
+        },
+        {
+            id: 18,
+            nome: 'Molde Tigela 6: 50×130mm',
+            descricao: 'Tigela 6: 50×130mm',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/comment/20260919/2326575514/b52712da1e78c9d4.jpg?x-oss-process=image/format,webp'
+        },
+        // === 19-24 — variações ===
+        {
+            id: 19,
+            nome: 'Molde Tigela 7: 50×120mm',
+            descricao: 'Tigela 7: 50×120mm',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/comment/20260919/2326575514/b52712da1e78c9d4.jpg?x-oss-process=image/format,webp'
+        },
+        {
+            id: 20,
+            nome: 'Molde Tigela 8: 40×170mm',
+            descricao: 'Tigela 8: 40×170mm',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/comment/20260919/2326575514/b52712da1e78c9d4.jpg?x-oss-process=image/format,webp'
+        },
+        {
+            id: 21,
+            nome: 'Molde Tigela 9: 40×160mm',
+            descricao: 'Tigela 9: 40×160mm',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/comment/20260919/2326575514/b52712da1e78c9d4.jpg?x-oss-process=image/format,webp'
+        },
+        {
+            id: 22,
+            nome: 'Molde Tigela 10: 40×150mm',
+            descricao: 'Tigela 10: 40×150mm',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/comment/20260919/2326575514/b52712da1e78c9d4.jpg?x-oss-process=image/format,webp'
+        },
+        {
+            id: 23,
+            nome: 'Molde Tigela 11: 40×140mm',
+            descricao: 'Tigela 11: 40×140mm',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/comment/20260919/2326575514/b52712da1e78c9d4.jpg?x-oss-process=image/format,webp'
+        },
+        {
+            id: 24,
+            nome: 'Molde Tigela 12: 40×130mm',
+            descricao: 'Tigela 12: 40×130mm',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/comment/20260919/2326575514/b52712da1e78c9d4.jpg?x-oss-process=image/format,webp'
         }
     ],
-    proximoId: 3
+    proximoId: 25
 };
 </script>
 <!-- ==================================================
-     ✅ FIM DOS PRODUTOS — Mande mais abaixo!
+     ✅ FIM DOS PRODUTOS — 24 CADASTRADOS!
      ================================================== -->
 
     <div id="area-publica">
@@ -139,7 +298,7 @@ function renderizar() {
             <img src="${p.imagem}" alt="${p.nome}" class="w-full h-64 object-cover">
             <div class="p-4">
                 <h3 class="font-semibold text-lg mb-2">${p.nome}</h3>
-                <p class="text-gray-600 text-sm mb-4">${p.descricao}</p>
+                <p class="text-gray-600 text-sm mb-4 whitespace-pre-line">${p.descricao}</p>
                 <a href="https://instagram.com/moldae_ceramica" target="_blank" class="block w-full text-center bg-[#E4405F] text-white py-2 rounded-lg hover:bg-opacity-90">
                     <i class="fa fa-instagram"></i> Pedir no Instagram
                 </a>
