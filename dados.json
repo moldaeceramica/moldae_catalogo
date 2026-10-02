@@ -1,0 +1,46 @@
+{
+    "credenciais": {
+        "usuario": "Rhode",
+        "senha": "Island"
+    },
+    "produtos": [
+        {
+            "id": 1,
+            "nome": "Molde Tigela Redonda",
+            "descricao": "Molde de gesso para tigela, tamanho 15cm",
+            "categoria": "moldes",
+            "imagem": "https://via.placeholder.com/300x300?text=Molde+Tigela"
+        },
+        {
+            "id": 2,
+            "nome": "Cortador Estrela",
+            "descricao": "Cortador em formato de estrela",
+            "categoria": "cortadores",
+            "imagem": "https://via.placeholder.com/300x300?text=Cortador+Estrela"
+        },
+        {
+            "id": 3,
+            "nome": "Espátula de Modelagem",
+            "descricao": "Ferramenta de aço com ponta fina",
+            "categoria": "ferramentas",
+            "imagem": "https://via.placeholder.com/300x300?text=Espátula"
+        },
+        {
+            "id": 4,
+            "nome": "Conjunto Vasos",
+            "descricao": "3 moldes para vasos de tamanhos diferentes",
+            "categoria": "conjuntos",
+            "imagem": "https://via.placeholder.com/300x300?text=Conjunto+Vasos"
+        }
+    ],
+    "configSite": {
+        "logoUrl": "https://via.placeholder.com/150x80?text=MOLDAE",
+        "logoTamanho": 64,
+        "bannerTitulo": "Moldes e Cortadores para Cerâmica",
+        "bannerSubtitulo": "Produtos de qualidade para dar forma à sua arte",
+        "corPrincipal": "#d4a574",
+        "corSecundaria": "#8b5a2b",
+        "fonte": "'Inter', sans-serif"
+    },
+    "proximoId": 5
+}
