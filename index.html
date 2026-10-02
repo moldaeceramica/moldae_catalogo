@@ -25,9 +25,15 @@
     </script>
     <style type="text/tailwindcss">
         @layer utilities {
-            .content-auto { content-visibility: auto; }
-            .transicao { transition: all 0.3s ease; }
-            .sombra-suave { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+            .content-auto {
+                content-visibility: auto;
+            }
+            .transicao {
+                transition: all 0.3s ease;
+            }
+            .sombra-suave {
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
         }
     </style>
     <style>
@@ -78,22 +84,33 @@
 
         <!-- Catálogo -->
         <main class="container mx-auto px-4 pb-16">
+            <!-- Todos os Produtos -->
             <div class="categoria-conteudo ativa" id="cat-todos">
                 <h2 class="text-2xl font-semibold mb-6">Todos os Produtos</h2>
-                <div id="grade-todos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+                <div id="grade-todos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Produtos carregados via JS -->
+                </div>
             </div>
+
+            <!-- Ferramentas -->
             <div class="categoria-conteudo" id="cat-ferramentas">
                 <h2 class="text-2xl font-semibold mb-6">Ferramentas</h2>
                 <div id="grade-ferramentas" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
             </div>
+
+            <!-- Moldes -->
             <div class="categoria-conteudo" id="cat-moldes">
                 <h2 class="text-2xl font-semibold mb-6">Moldes</h2>
                 <div id="grade-moldes" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
             </div>
+
+            <!-- Cortadores -->
             <div class="categoria-conteudo" id="cat-cortadores">
                 <h2 class="text-2xl font-semibold mb-6">Cortadores</h2>
                 <div id="grade-cortadores" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
             </div>
+
+            <!-- Conjuntos -->
             <div class="categoria-conteudo" id="cat-conjuntos">
                 <h2 class="text-2xl font-semibold mb-6">Conjuntos</h2>
                 <div id="grade-conjuntos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
@@ -136,12 +153,14 @@
 
     <!-- Painel Administrativo -->
     <div id="painel-admin" class="hidden fixed inset-0 bg-gray-50 flex flex-col z-40 overflow-auto">
+        <!-- Cabeçalho do Painel -->
         <div class="bg-secundario text-white p-4 flex justify-between items-center">
             <h1 class="text-xl font-bold">Painel — Moldae Cerâmica</h1>
             <button id="botao-sair" class="bg-white/20 px-4 py-2 rounded hover:bg-white/30 transicao">
                 <i class="fa fa-sign-out mr-1"></i> Sair
             </button>
         </div>
+
         <div class="flex flex-col md:flex-row flex-1">
             <!-- Menu Lateral -->
             <aside class="bg-gray-100 w-full md:w-64 p-4">
@@ -152,9 +171,6 @@
                     <button class="aba-painel w-full text-left px-4 py-2 rounded hover:bg-gray-200" data-aba="adicionar">
                         <i class="fa fa-plus-circle mr-2"></i> Adicionar Produto
                     </button>
-                    <button class="aba-painel w-full text-left px-4 py-2 rounded hover:bg-gray-200" data-aba="codigo">
-                        <i class="fa fa-code mr-2"></i> Código Final
-                    </button>
                     <button class="aba-painel w-full text-left px-4 py-2 rounded hover:bg-gray-200" data-aba="aparencia">
                         <i class="fa fa-paint-brush mr-2"></i> Aparência
                     </button>
@@ -163,31 +179,37 @@
 
             <!-- Conteúdo do Painel -->
             <main class="flex-1 p-6">
-                <!-- Aba Produtos -->
+                <!-- Aba: Gerenciar Produtos -->
                 <section class="conteudo-aba" id="aba-produtos">
                     <div class="flex justify-between items-center mb-6">
                         <h2 class="text-xl font-semibold">Gerenciar Produtos</h2>
-                        <button id="botao-excluir-selecionados" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transicao disabled:opacity-50" disabled>
-                            <i class="fa fa-trash mr-1"></i> Excluir Selecionados
-                        </button>
+                        <div>
+                            <button id="botao-excluir-selecionados" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transicao disabled:opacity-50" disabled>
+                                <i class="fa fa-trash mr-1"></i> Excluir Selecionados
+                            </button>
+                        </div>
                     </div>
                     <div class="bg-white rounded-lg p-4 sombra-suave overflow-x-auto">
                         <table class="w-full">
                             <thead>
                                 <tr class="border-b">
-                                    <th class="p-3 text-left w-10"><input type="checkbox" id="selecionar-todos"></th>
+                                    <th class="p-3 text-left w-10">
+                                        <input type="checkbox" id="selecionar-todos">
+                                    </th>
                                     <th class="p-3 text-left">Imagem</th>
                                     <th class="p-3 text-left">Nome</th>
                                     <th class="p-3 text-left">Categoria</th>
                                     <th class="p-3 text-left">Ações</th>
                                 </tr>
                             </thead>
-                            <tbody id="tabela-produtos"></tbody>
+                            <tbody id="tabela-produtos">
+                                <!-- Preenchido via JS -->
+                            </tbody>
                         </table>
                     </div>
                 </section>
 
-                <!-- Aba Adicionar -->
+                <!-- Aba: Adicionar Produto -->
                 <section class="conteudo-aba hidden" id="aba-adicionar">
                     <h2 class="text-xl font-semibold mb-6">Adicionar/Editar Produto</h2>
                     <form id="form-produto" class="bg-white rounded-lg p-6 sombra-suave space-y-4 max-w-2xl">
@@ -212,30 +234,24 @@
                         <div>
                             <label class="block text-sm font-medium mb-1">URL da Imagem</label>
                             <input type="url" id="produto-imagem" placeholder="https://..." class="w-full px-4 py-2 border rounded-lg">
+                            <p class="text-xs text-gray-500 mt-1">Cole o endereço da imagem ou envie para hospedar</p>
                         </div>
                         <div class="flex gap-3">
-                            <button type="submit" class="bg-secundario text-white px-6 py-2 rounded-lg hover:bg-secundario/90 transicao">Salvar</button>
-                            <button type="reset" id="botao-cancelar" class="bg-gray-200 px-6 py-2 rounded-lg hover:bg-gray-300 transicao">Cancelar</button>
+                            <button type="submit" class="bg-secundario text-white px-6 py-2 rounded-lg hover:bg-secundario/90 transicao">
+                                Salvar Produto
+                            </button>
+                            <button type="reset" id="botao-cancelar" class="bg-gray-200 px-6 py-2 rounded-lg hover:bg-gray-300 transicao">
+                                Cancelar
+                            </button>
                         </div>
                     </form>
                 </section>
 
-                <!-- Aba Código -->
-                <section class="conteudo-aba hidden" id="aba-codigo">
-                    <h2 class="text-xl font-semibold mb-4">📋 Código Pronto — Copie e Cole no seu arquivo</h2>
-                    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-4 text-sm">
-                        <strong>Como usar:</strong> Sempre que alterar algo nos produtos ou aparência, copie todo o código da caixa abaixo, substitua todo o conteúdo do seu <code>index.html</code> por ele e salve. Assim as alterações ficam gravadas para sempre no código!
-                    </div>
-                    <textarea id="caixa-codigo" class="w-full h-[450px] p-4 border rounded-lg text-xs font-mono bg-gray-50"></textarea>
-                    <button id="btn-copiar-codigo" class="mt-3 bg-secundario text-white px-5 py-2 rounded-lg hover:bg-secundario/90 transicao">
-                        <i class="fa fa-copy mr-1"></i> Copiar Código Completo
-                    </button>
-                    <span id="msg-copiado" class="ml-3 text-green-600 hidden font-medium">✓ Copiado com sucesso!</span>
-                </section>
-
-                <!-- Aba Aparência -->
+                <!-- Aba: Aparência -->
                 <section class="conteudo-aba hidden" id="aba-aparencia">
                     <h2 class="text-xl font-semibold mb-6">Configurações do Site</h2>
+                    
+                    <!-- Logo -->
                     <div class="bg-white rounded-lg p-6 sombra-suave mb-6 max-w-2xl">
                         <h3 class="font-medium mb-4">Logo</h3>
                         <div class="space-y-4">
@@ -244,11 +260,13 @@
                                 <input type="url" id="config-logo-url" class="w-full px-4 py-2 border rounded-lg">
                             </div>
                             <div>
-                                <label class="block text-sm font-medium mb-1">Tamanho: <span id="valor-logo-tamanho">64</span>px</label>
+                                <label class="block text-sm font-medium mb-1">Tamanho da Logo: <span id="valor-tamanho-logo">64</span>px</label>
                                 <input type="range" id="config-logo-tamanho" min="30" max="150" value="64" class="w-full">
                             </div>
                         </div>
                     </div>
+
+                    <!-- Banner -->
                     <div class="bg-white rounded-lg p-6 sombra-suave mb-6 max-w-2xl">
                         <h3 class="font-medium mb-4">Texto do Banner</h3>
                         <div class="space-y-4">
@@ -262,6 +280,8 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Cores -->
                     <div class="bg-white rounded-lg p-6 sombra-suave mb-6 max-w-2xl">
                         <h3 class="font-medium mb-4">Cores</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -275,6 +295,22 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Fonte -->
+                    <div class="bg-white rounded-lg p-6 sombra-suave mb-6 max-w-2xl">
+                        <h3 class="font-medium mb-4">Fonte</h3>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Família da Fonte</label>
+                            <select id="fonte-principal" class="w-full px-4 py-2 border rounded-lg">
+                                <option value="'Inter', sans-serif">Inter (Padrão)</option>
+                                <option value="'Arial', sans-serif">Arial</option>
+                                <option value="'Georgia', serif">Georgia</option>
+                                <option value="'Verdana', sans-serif">Verdana</option>
+                                <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <button id="salvar-aparencia" class="bg-secundario text-white px-6 py-2 rounded-lg hover:bg-secundario/90 transicao">
                         Salvar Alterações
                     </button>
@@ -284,20 +320,15 @@
     </div>
 
     <script>
-        // ==========================================
-        // DADOS — EDITE AQUI DIRETO SE QUISER!
-        // ==========================================
+        // Dados iniciais e configurações
         const credenciais = { usuario: 'Rhode', senha: 'Island' };
-
-        // PRODUTOS — É AQUI QUE FICAM SALVOS NO CÓDIGO
-        let produtos = [
+        let produtos = JSON.parse(localStorage.getItem('moldae_produtos')) || [
             { id: 1, nome: 'Molde Tigela Redonda', descricao: 'Molde de gesso para tigela, tamanho 15cm', categoria: 'moldes', imagem: 'https://via.placeholder.com/300x300?text=Molde+Tigela' },
             { id: 2, nome: 'Cortador Estrela', descricao: 'Cortador em formato de estrela', categoria: 'cortadores', imagem: 'https://via.placeholder.com/300x300?text=Cortador+Estrela' },
             { id: 3, nome: 'Espátula de Modelagem', descricao: 'Ferramenta de aço com ponta fina', categoria: 'ferramentas', imagem: 'https://via.placeholder.com/300x300?text=Espátula' },
             { id: 4, nome: 'Conjunto Vasos', descricao: '3 moldes para vasos de tamanhos diferentes', categoria: 'conjuntos', imagem: 'https://via.placeholder.com/300x300?text=Conjunto+Vasos' },
         ];
-
-        let configSite = {
+        let configSite = JSON.parse(localStorage.getItem('moldae_config')) || {
             logoUrl: 'https://via.placeholder.com/150x80?text=MOLDAE',
             logoTamanho: 64,
             bannerTitulo: 'Moldes e Cortadores para Cerâmica',
@@ -306,16 +337,6 @@
             corSecundaria: '#8b5a2b',
             fonte: "'Inter', sans-serif"
         };
-
-        // Carregar edições temporárias do navegador
-        const dadosSalvos = localStorage.getItem('moldae_produtos');
-        if (dadosSalvos) {
-            const carregados = JSON.parse(dadosSalvos);
-            if (carregados && carregados.length > 0) produtos = carregados;
-        }
-        const configSalva = localStorage.getItem('moldae_config');
-        if (configSalva) configSite = JSON.parse(configSalva);
-
         let proximoId = produtos.length ? Math.max(...produtos.map(p => p.id)) + 1 : 1;
 
         // Elementos
@@ -340,8 +361,7 @@
                 painelAdmin.classList.remove('hidden');
                 areaPublica.classList.add('hidden');
                 renderizarTabelaProdutos();
-                carregarFormularioAparencia();
-                gerarCodigoCompleto();
+                carregarConfigInterface();
             } else {
                 document.getElementById('erro-login').classList.remove('hidden');
             }
@@ -354,7 +374,7 @@
             document.getElementById('erro-login').classList.add('hidden');
         });
 
-        // ========== NAVEGAÇÃO CATEGORIAS ==========
+        // ========== NAVEGAÇÃO DE CATEGORIAS ==========
         botoesCategoria.forEach(botao => {
             botao.addEventListener('click', () => {
                 const cat = botao.dataset.categoria;
@@ -362,21 +382,14 @@
                     b.classList.remove('ativa', 'text-secundario', 'border-b-2', 'border-secundario', 'pb-1');
                 });
                 botao.classList.add('ativa', 'text-secundario', 'border-b-2', 'border-secundario', 'pb-1');
-                conteudosCategoria.forEach(c => c.classList.remove('ativa'));
+                conteudosCategoria.forEach(cont => {
+                    cont.classList.remove('ativa');
+                });
                 document.getElementById(`cat-${cat}`).classList.add('ativa');
             });
         });
 
-        // ========== APLICAR CONFIGURAÇÕES ==========
-        function aplicarConfig() {
-            document.getElementById('logo-site').src = configSite.logoUrl;
-            document.getElementById('logo-site').style.height = configSite.logoTamanho + 'px';
-            document.getElementById('titulo-banner').textContent = configSite.bannerTitulo;
-            document.getElementById('subtitulo-banner').textContent = configSite.bannerSubtitulo;
-            document.body.style.fontFamily = configSite.fonte;
-        }
-
-        // ========== RENDERIZAR CATÁLOGO ==========
+        // ========== RENDERIZAR PRODUTOS ==========
         function renderizarCatalogo() {
             const categorias = ['todos', 'ferramentas', 'moldes', 'cortadores', 'conjuntos'];
             categorias.forEach(cat => {
@@ -405,7 +418,7 @@
             });
         }
 
-        // ========== TABELA PRODUTOS ==========
+        // ========== PAINEL — PRODUTOS ==========
         function renderizarTabelaProdutos() {
             const corpo = document.getElementById('tabela-produtos');
             corpo.innerHTML = '';
@@ -431,11 +444,7 @@
             atualizarBotoesExclusao();
         }
 
-        function atualizarBotoesExclusao() {
-            const selecionados = document.querySelectorAll('.checkbox-produto:checked').length;
-            document.getElementById('botao-excluir-selecionados').disabled = selecionados === 0;
-        }
-
+        // Seleção múltipla
         document.addEventListener('change', e => {
             if (e.target.classList.contains('checkbox-produto') || e.target.id === 'selecionar-todos') {
                 atualizarBotoesExclusao();
@@ -444,31 +453,32 @@
         document.getElementById('selecionar-todos').addEventListener('change', function() {
             document.querySelectorAll('.checkbox-produto').forEach(cb => cb.checked = this.checked);
         });
-
-        // Excluir múltiplos
+        function atualizarBotoesExclusao() {
+            const selecionados = document.querySelectorAll('.checkbox-produto:checked').length;
+            document.getElementById('botao-excluir-selecionados').disabled = selecionados === 0;
+        }
         document.getElementById('botao-excluir-selecionados').addEventListener('click', () => {
             const ids = Array.from(document.querySelectorAll('.checkbox-produto:checked')).map(cb => parseInt(cb.dataset.id));
             if (ids.length && confirm(`Excluir ${ids.length} produto(s)?`)) {
                 produtos = produtos.filter(p => !ids.includes(p.id));
-                salvarLocal();
+                salvarDados();
                 renderizarTabelaProdutos();
                 renderizarCatalogo();
-                gerarCodigoCompleto();
             }
         });
 
-        // Excluir e editar individual
+        // Excluir individual
         document.addEventListener('click', e => {
             if (e.target.closest('.excluir-produto')) {
                 const id = parseInt(e.target.closest('.excluir-produto').dataset.id);
                 if (confirm('Excluir este produto?')) {
                     produtos = produtos.filter(p => p.id !== id);
-                    salvarLocal();
+                    salvarDados();
                     renderizarTabelaProdutos();
                     renderizarCatalogo();
-                    gerarCodigoCompleto();
                 }
             }
+            // Editar
             if (e.target.closest('.editar-produto')) {
                 const id = parseInt(e.target.closest('.editar-produto').dataset.id);
                 const prod = produtos.find(p => p.id === id);
@@ -483,7 +493,7 @@
             }
         });
 
-        // Salvar produto
+        // Formulário de produto
         document.getElementById('form-produto').addEventListener('submit', e => {
             e.preventDefault();
             const id = document.getElementById('produto-id').value;
@@ -494,26 +504,26 @@
                 imagem: document.getElementById('produto-imagem').value || 'https://via.placeholder.com/300x300?text=Sem+Imagem'
             };
             if (id) {
-                const idx = produtos.findIndex(p => p.id === parseInt(id));
-                if (idx !== -1) produtos[idx] = { ...produtos[idx], ...dados };
+                // Edição
+                const indice = produtos.findIndex(p => p.id === parseInt(id));
+                if (indice !== -1) produtos[indice] = { ...produtos[indice], ...dados };
             } else {
+                // Novo
                 produtos.push({ id: proximoId++, ...dados });
             }
-            salvarLocal();
+            salvarDados();
             document.getElementById('form-produto').reset();
             document.getElementById('produto-id').value = '';
             renderizarTabelaProdutos();
             renderizarCatalogo();
-            gerarCodigoCompleto();
             document.querySelector('[data-aba="produtos"]').click();
         });
-
         document.getElementById('botao-cancelar').addEventListener('click', () => {
             document.getElementById('produto-id').value = '';
             document.querySelector('[data-aba="produtos"]').click();
         });
 
-        // ========== TROCA DE ABAS DO PAINEL ==========
+        // ========== TROCA DE ABAS ==========
         document.querySelectorAll('.aba-painel').forEach(botao => {
             botao.addEventListener('click', () => {
                 const aba = botao.dataset.aba;
@@ -525,31 +535,39 @@
                 botao.classList.remove('hover:bg-gray-200');
                 document.querySelectorAll('.conteudo-aba').forEach(c => c.classList.add('hidden'));
                 document.getElementById(`aba-${aba}`).classList.remove('hidden');
-
-                if (aba === 'codigo') gerarCodigoCompleto();
-                if (aba === 'aparencia') carregarFormularioAparencia();
             });
         });
 
         // ========== APARÊNCIA ==========
-        function carregarFormularioAparencia() {
+        function carregarConfigInterface() {
             document.getElementById('config-logo-url').value = configSite.logoUrl;
             document.getElementById('config-logo-tamanho').value = configSite.logoTamanho;
-            document.getElementById('valor-logo-tamanho').textContent = configSite.logoTamanho;
+            document.getElementById('valor-tamanho-logo').textContent = configSite.logoTamanho;
             document.getElementById('config-banner-titulo').value = configSite.bannerTitulo;
             document.getElementById('config-banner-subtitulo').value = configSite.bannerSubtitulo;
             document.getElementById('cor-principal').value = configSite.corPrincipal;
             document.getElementById('cor-secundaria').value = configSite.corSecundaria;
+            document.getElementById('fonte-principal').value = configSite.fonte;
             aplicarConfig();
         }
-
-        // Preview tamanho da logo
+        function aplicarConfig() {
+            document.getElementById('logo-site').src = configSite.logoUrl;
+            document.getElementById('logo-site').style.height = `${configSite.logoTamanho}px`;
+            document.getElementById('titulo-banner').textContent = configSite.bannerTitulo;
+            document.getElementById('subtitulo-banner').textContent = configSite.bannerSubtitulo;
+            document.documentElement.style.setProperty('--cor-primario', configSite.corPrincipal);
+            document.documentElement.style.setProperty('--cor-secundario', configSite.corSecundaria);
+            document.body.style.fontFamily = configSite.fonte;
+            // Atualizar classes com cores
+            document.querySelectorAll('.bg-primario, .bg-secundario, .text-secundario, .border-secundario').forEach(el => {
+                el.style.transition = 'background-color 0.3s, color 0.3s, border-color 0.3s';
+            });
+        }
+        // Visualização em tempo real do tamanho da logo
         document.getElementById('config-logo-tamanho').addEventListener('input', function() {
-            document.getElementById('valor-logo-tamanho').textContent = this.value;
-            document.getElementById('logo-site').style.height = this.value + 'px';
+            document.getElementById('valor-tamanho-logo').textContent = this.value;
+            document.getElementById('logo-site').style.height = `${this.value}px`;
         });
-
-        // Salvar aparência
         document.getElementById('salvar-aparencia').addEventListener('click', () => {
             configSite = {
                 logoUrl: document.getElementById('config-logo-url').value,
@@ -558,201 +576,21 @@
                 bannerSubtitulo: document.getElementById('config-banner-subtitulo').value,
                 corPrincipal: document.getElementById('cor-principal').value,
                 corSecundaria: document.getElementById('cor-secundaria').value,
-                fonte: "'Inter', sans-serif"
+                fonte: document.getElementById('fonte-principal').value
             };
             localStorage.setItem('moldae_config', JSON.stringify(configSite));
             aplicarConfig();
-            gerarCodigoCompleto();
-            alert('Alterações salvas! Agora vá na aba "Código Final", copie e substitua o arquivo no seu site.');
+            alert('Configurações salvas!');
         });
 
-        // ========== SALVAR LOCAL ==========
-        function salvarLocal() {
+        // ========== PERSISTÊNCIA ==========
+        function salvarDados() {
             localStorage.setItem('moldae_produtos', JSON.stringify(produtos));
         }
 
-        // ========== GERAR CÓDIGO COMPLETO ==========
-        function escapar(texto) {
-            return (texto || '').replace(/'/g, "\\'").replace(/\n/g, ' ');
-        }
-
-        function gerarCodigoCompleto() {
-            const produtosStr = produtos.map(p =>
-                `{ id: ${p.id}, nome: '${escapar(p.nome)}', descricao: '${escapar(p.descricao)}', categoria: '${p.categoria}', imagem: '${p.imagem}' }`
-            ).join(',\n            ');
-
-            const codigo = `<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moldae Cerâmica | Moldes e Cortadores</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primario: '${configSite.corPrincipal}',
-                        secundario: '${configSite.corSecundaria}',
-                        fundo: '#f9f6f0',
-                        texto: '#333333',
-                    },
-                    fontFamily: {
-                        principal: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .content-auto { content-visibility: auto; }
-            .transicao { transition: all 0.3s ease; }
-            .sombra-suave { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-        }
-    </style>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        * { font-family: 'Inter', sans-serif; }
-        .categoria-conteudo { display: none; }
-        .categoria-conteudo.ativa { display: block; }
-        .modal { transition: opacity 0.3s ease, visibility 0.3s ease; }
-        .cartao-produto:hover { transform: translateY(-5px); }
-    </style>
-</head>
-<body class="bg-fundo text-texto">
-    <div id="area-publica">
-        <header class="bg-white sombra-suave sticky top-0 z-50">
-            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-                <div class="flex items-center">
-                    <img src="${configSite.logoUrl}" alt="Logo Moldae Cerâmica" class="object-contain" style="height: ${configSite.logoTamanho}px;">
-                </div>
-                <nav class="hidden md:flex gap-8 font-medium">
-                    <button class="categoria-botao ativa text-secundario border-b-2 border-secundario pb-1" data-categoria="todos">Início</button>
-                    <button class="categoria-botao hover:text-secundario" data-categoria="ferramentas">Ferramentas</button>
-                    <button class="categoria-botao hover:text-secundario" data-categoria="moldes">Moldes</button>
-                    <button class="categoria-botao hover:text-secundario" data-categoria="cortadores">Cortadores</button>
-                    <button class="categoria-botao hover:text-secundario" data-categoria="conjuntos">Conjuntos</button>
-                </nav>
-                <button id="botao-login" class="text-gray-600 hover:text-secundario">
-                    <i class="fa fa-cog"></i>
-                </button>
-                <button class="md:hidden text-2xl">
-                    <i class="fa fa-bars"></i>
-                </button>
-            </div>
-        </header>
-
-        <section class="relative bg-primario/10 py-16 mb-8">
-            <div class="container mx-auto px-4 text-center">
-                <h1 class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-secundario mb-4">${configSite.bannerTitulo}</h1>
-                <p class="text-lg mb-8 max-w-2xl mx-auto">${configSite.bannerSubtitulo}</p>
-                <a href="https://instagram.com/moldae_ceramica" target="_blank" class="inline-flex items-center gap-2 bg-[#E4405F] text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transicao">
-                    <i class="fa fa-instagram"></i> Peça pelo Instagram @moldae_ceramica
-                </a>
-            </div>
-        </section>
-
-        <main class="container mx-auto px-4 pb-16">
-            <div class="categoria-conteudo ativa" id="cat-todos">
-                <h2 class="text-2xl font-semibold mb-6">Todos os Produtos</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-${produtos.map(p => `
-                    <div class="bg-white rounded-xl overflow-hidden sombra-suave transicao hover:-translate-y-1">
-                        <img src="${p.imagem}" alt="${p.nome}" class="w-full h-64 object-cover">
-                        <div class="p-4">
-                            <h3 class="font-semibold text-lg mb-2">${p.nome}</h3>
-                            <p class="text-gray-600 text-sm mb-4">${p.descricao || 'Sem descrição'}</p>
-                            <a href="https://instagram.com/moldae_ceramica" target="_blank" class="block w-full text-center bg-[#E4405F] text-white py-2 rounded-lg hover:bg-opacity-90 transicao">
-                                <i class="fa fa-instagram mr-1"></i> Pedir no Instagram
-                            </a>
-                        </div>
-                    </div>`).join('')}
-                </div>
-            </div>
-        </main>
-
-        <footer class="bg-secundario text-white py-10">
-            <div class="container mx-auto px-4 text-center">
-                <p class="mb-4">Siga-nos no Instagram</p>
-                <a href="https://instagram.com/moldae_ceramica" target="_blank" class="inline-flex items-center gap-2 text-xl hover:text-primario transicao">
-                    <i class="fa fa-instagram"></i> @moldae_ceramica
-                </a>
-                <p class="mt-6 text-sm opacity-70">© 2026 Moldae Cerâmica — Todos os direitos reservados</p>
-            </div>
-        </footer>
-    </div>
-
-    <script>
-        // Dados fixos
-        const produtos = [
-            ${produtosStr}
-        ];
-
-        // Renderizar catálogo
-        function renderizar() {
-            const categorias = ['todos', 'ferramentas', 'moldes', 'cortadores', 'conjuntos'];
-            categorias.forEach(cat => {
-                const lista = cat === 'todos' ? produtos : produtos.filter(p => p.categoria === cat);
-                const container = document.querySelector('#cat-' + cat + ' > div');
-                if (!container) return;
-                container.innerHTML = '';
-                lista.forEach(p => {
-                    const card = document.createElement('div');
-                    card.className = 'bg-white rounded-xl overflow-hidden sombra-suave transicao hover:-translate-y-1';
-                    card.innerHTML = \`
-                        <img src="\${p.imagem}" alt="\${p.nome}" class="w-full h-64 object-cover">
-                        <div class="p-4">
-                            <h3 class="font-semibold text-lg mb-2">\${p.nome}</h3>
-                            <p class="text-gray-600 text-sm mb-4">\${p.descricao || 'Sem descrição'}</p>
-                            <a href="https://instagram.com/moldae_ceramica" target="_blank" class="block w-full text-center bg-[#E4405F] text-white py-2 rounded-lg hover:bg-opacity-90 transicao">
-                                <i class="fa fa-instagram mr-1"></i> Pedir no Instagram
-                            </a>
-                        </div>
-                    \`;
-                    container.appendChild(card);
-                });
-                if (!lista.length) {
-                    container.innerHTML = '<p class="col-span-full text-center text-gray-500 py-8">Nenhum produto nesta categoria ainda.</p>';
-                }
-            });
-        }
-
-        // Navegação
-        document.querySelectorAll('.categoria-botao').forEach(botao => {
-            botao.addEventListener('click', () => {
-                const cat = botao.dataset.categoria;
-                document.querySelectorAll('.categoria-botao').forEach(b => {
-                    b.classList.remove('ativa', 'text-secundario', 'border-b-2', 'border-secundario', 'pb-1');
-                });
-                botao.classList.add('ativa', 'text-secundario', 'border-b-2', 'border-secundario', 'pb-1');
-                document.querySelectorAll('.categoria-conteudo').forEach(c => c.classList.remove('ativa'));
-                document.getElementById('cat-' + cat).classList.add('ativa');
-            });
-        });
-
-        renderizar();
-    <\/script>
-</body>
-</html>`;
-
-            document.getElementById('caixa-codigo').value = codigo;
-        }
-
-        // Copiar código
-        document.getElementById('btn-copiar-codigo').addEventListener('click', () => {
-            const codigo = document.getElementById('caixa-codigo').value;
-            navigator.clipboard.writeText(codigo).then(() => {
-                document.getElementById('msg-copiado').classList.remove('hidden');
-                setTimeout(() => document.getElementById('msg-copiado').classList.add('hidden'), 3000);
-            });
-        });
-
         // ========== INICIALIZAÇÃO ==========
-        aplicarConfig();
         renderizarCatalogo();
+        carregarConfigInterface();
     </script>
 </body>
 </html>
