@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moldae Cerâmica | Moldes e Cortadores</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com/"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
@@ -25,15 +25,9 @@
     </script>
     <style type="text/tailwindcss">
         @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
-            .transicao {
-                transition: all 0.3s ease;
-            }
-            .sombra-suave {
-                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            }
+            .content-auto { content-visibility: auto; }
+            .transicao { transition: all 0.3s ease; }
+            .sombra-suave { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
         }
     </style>
     <style>
@@ -43,6 +37,15 @@
         .categoria-conteudo.ativa { display: block; }
         .modal { transition: opacity 0.3s ease, visibility 0.3s ease; }
         .cartao-produto:hover { transform: translateY(-5px); }
+        :root {
+            --cor-primario: #d4a574;
+            --cor-secundario: #8b5a2b;
+        }
+        .bg-primario { background-color: var(--cor-primario) !important; }
+        .bg-primario\/10 { background-color: color-mix(in srgb, var(--cor-primario) 10%, transparent) !important; }
+        .bg-secundario { background-color: var(--cor-secundario) !important; }
+        .text-secundario { color: var(--cor-secundario) !important; }
+        .border-secundario { border-color: var(--cor-secundario) !important; }
     </style>
 </head>
 <body class="bg-fundo text-texto">
@@ -75,8 +78,7 @@
             <div class="container mx-auto px-4 text-center">
                 <h1 id="titulo-banner" class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-secundario mb-4">Moldes e Cortadores para Cerâmica</h1>
                 <p id="subtitulo-banner" class="text-lg mb-8 max-w-2xl mx-auto">Produtos de qualidade para dar forma à sua arte</p>
-                <a href="https://instagram.com/moldae_ceramica" target="_blank" 
-                   class="inline-flex items-center gap-2 bg-[#E4405F] text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transicao">
+                <a href="https://instagram.com/moldae_ceramica" target="_blank" class="inline-flex items-center gap-2 bg-[#E4405F] text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transicao">
                     <i class="fa fa-instagram"></i> Peça pelo Instagram @moldae_ceramica
                 </a>
             </div>
@@ -84,33 +86,22 @@
 
         <!-- Catálogo -->
         <main class="container mx-auto px-4 pb-16">
-            <!-- Todos os Produtos -->
             <div class="categoria-conteudo ativa" id="cat-todos">
                 <h2 class="text-2xl font-semibold mb-6">Todos os Produtos</h2>
-                <div id="grade-todos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    <!-- Produtos carregados via JS -->
-                </div>
+                <div id="grade-todos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
             </div>
-
-            <!-- Ferramentas -->
             <div class="categoria-conteudo" id="cat-ferramentas">
                 <h2 class="text-2xl font-semibold mb-6">Ferramentas</h2>
                 <div id="grade-ferramentas" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
             </div>
-
-            <!-- Moldes -->
             <div class="categoria-conteudo" id="cat-moldes">
                 <h2 class="text-2xl font-semibold mb-6">Moldes</h2>
                 <div id="grade-moldes" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
             </div>
-
-            <!-- Cortadores -->
             <div class="categoria-conteudo" id="cat-cortadores">
                 <h2 class="text-2xl font-semibold mb-6">Cortadores</h2>
                 <div id="grade-cortadores" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
             </div>
-
-            <!-- Conjuntos -->
             <div class="categoria-conteudo" id="cat-conjuntos">
                 <h2 class="text-2xl font-semibold mb-6">Conjuntos</h2>
                 <div id="grade-conjuntos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
@@ -131,7 +122,7 @@
 
     <!-- Tela de Login -->
     <div id="tela-login" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 modal opacity-0 invisible">
-        <div class="bg-white rounded-xl p-8 w-full max-w-md sombra-suave">
+        <div class="bg-white rounded-xl p-8 w-full max-w-md sombra-suave relative">
             <h2 class="text-2xl font-bold text-center mb-6">Painel Administrativo</h2>
             <div class="space-y-4">
                 <div>
@@ -153,16 +144,18 @@
 
     <!-- Painel Administrativo -->
     <div id="painel-admin" class="hidden fixed inset-0 bg-gray-50 flex flex-col z-40 overflow-auto">
-        <!-- Cabeçalho do Painel -->
         <div class="bg-secundario text-white p-4 flex justify-between items-center">
             <h1 class="text-xl font-bold">Painel — Moldae Cerâmica</h1>
-            <button id="botao-sair" class="bg-white/20 px-4 py-2 rounded hover:bg-white/30 transicao">
-                <i class="fa fa-sign-out mr-1"></i> Sair
-            </button>
+            <div class="flex gap-2">
+                <button id="botao-exportar" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded transicao">
+                    <i class="fa fa-download mr-1"></i> Salvar Arquivo
+                </button>
+                <button id="botao-sair" class="bg-white/20 px-4 py-2 rounded hover:bg-white/30 transicao">
+                    <i class="fa fa-sign-out mr-1"></i> Sair
+                </button>
+            </div>
         </div>
-
         <div class="flex flex-col md:flex-row flex-1">
-            <!-- Menu Lateral -->
             <aside class="bg-gray-100 w-full md:w-64 p-4">
                 <nav class="space-y-2">
                     <button class="aba-painel w-full text-left px-4 py-2 rounded bg-secundario text-white" data-aba="produtos">
@@ -176,18 +169,13 @@
                     </button>
                 </nav>
             </aside>
-
-            <!-- Conteúdo do Painel -->
             <main class="flex-1 p-6">
-                <!-- Aba: Gerenciar Produtos -->
                 <section class="conteudo-aba" id="aba-produtos">
                     <div class="flex justify-between items-center mb-6">
                         <h2 class="text-xl font-semibold">Gerenciar Produtos</h2>
-                        <div>
-                            <button id="botao-excluir-selecionados" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transicao disabled:opacity-50" disabled>
-                                <i class="fa fa-trash mr-1"></i> Excluir Selecionados
-                            </button>
-                        </div>
+                        <button id="botao-excluir-selecionados" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transicao disabled:opacity-50" disabled>
+                            <i class="fa fa-trash mr-1"></i> Excluir Selecionados
+                        </button>
                     </div>
                     <div class="bg-white rounded-lg p-4 sombra-suave overflow-x-auto">
                         <table class="w-full">
@@ -202,14 +190,11 @@
                                     <th class="p-3 text-left">Ações</th>
                                 </tr>
                             </thead>
-                            <tbody id="tabela-produtos">
-                                <!-- Preenchido via JS -->
-                            </tbody>
+                            <tbody id="tabela-produtos"></tbody>
                         </table>
                     </div>
                 </section>
 
-                <!-- Aba: Adicionar Produto -->
                 <section class="conteudo-aba hidden" id="aba-adicionar">
                     <h2 class="text-xl font-semibold mb-6">Adicionar/Editar Produto</h2>
                     <form id="form-produto" class="bg-white rounded-lg p-6 sombra-suave space-y-4 max-w-2xl">
@@ -234,24 +219,17 @@
                         <div>
                             <label class="block text-sm font-medium mb-1">URL da Imagem</label>
                             <input type="url" id="produto-imagem" placeholder="https://..." class="w-full px-4 py-2 border rounded-lg">
-                            <p class="text-xs text-gray-500 mt-1">Cole o endereço da imagem ou envie para hospedar</p>
+                            <p class="text-xs text-gray-500 mt-1">Cole o endereço da imagem</p>
                         </div>
                         <div class="flex gap-3">
-                            <button type="submit" class="bg-secundario text-white px-6 py-2 rounded-lg hover:bg-secundario/90 transicao">
-                                Salvar Produto
-                            </button>
-                            <button type="reset" id="botao-cancelar" class="bg-gray-200 px-6 py-2 rounded-lg hover:bg-gray-300 transicao">
-                                Cancelar
-                            </button>
+                            <button type="submit" class="bg-secundario text-white px-6 py-2 rounded-lg hover:bg-secundario/90 transicao">Salvar Produto</button>
+                            <button type="reset" id="botao-cancelar" class="bg-gray-200 px-6 py-2 rounded-lg hover:bg-gray-300 transicao">Cancelar</button>
                         </div>
                     </form>
                 </section>
 
-                <!-- Aba: Aparência -->
                 <section class="conteudo-aba hidden" id="aba-aparencia">
                     <h2 class="text-xl font-semibold mb-6">Configurações do Site</h2>
-                    
-                    <!-- Logo -->
                     <div class="bg-white rounded-lg p-6 sombra-suave mb-6 max-w-2xl">
                         <h3 class="font-medium mb-4">Logo</h3>
                         <div class="space-y-4">
@@ -265,8 +243,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Banner -->
                     <div class="bg-white rounded-lg p-6 sombra-suave mb-6 max-w-2xl">
                         <h3 class="font-medium mb-4">Texto do Banner</h3>
                         <div class="space-y-4">
@@ -280,8 +256,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Cores -->
                     <div class="bg-white rounded-lg p-6 sombra-suave mb-6 max-w-2xl">
                         <h3 class="font-medium mb-4">Cores</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -295,8 +269,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Fonte -->
                     <div class="bg-white rounded-lg p-6 sombra-suave mb-6 max-w-2xl">
                         <h3 class="font-medium mb-4">Fonte</h3>
                         <div>
@@ -310,25 +282,24 @@
                             </select>
                         </div>
                     </div>
-
-                    <button id="salvar-aparencia" class="bg-secundario text-white px-6 py-2 rounded-lg hover:bg-secundario/90 transicao">
-                        Salvar Alterações
-                    </button>
+                    <button id="salvar-aparencia" class="bg-secundario text-white px-6 py-2 rounded-lg hover:bg-secundario/90 transicao">Aplicar Alterações</button>
                 </section>
             </main>
         </div>
     </div>
 
     <script>
-        // Dados iniciais e configurações
+        // Dados iniciais
         const credenciais = { usuario: 'Rhode', senha: 'Island' };
-        let produtos = JSON.parse(localStorage.getItem('moldae_produtos')) || [
+        
+        let produtos = [
             { id: 1, nome: 'Molde Tigela Redonda', descricao: 'Molde de gesso para tigela, tamanho 15cm', categoria: 'moldes', imagem: 'https://via.placeholder.com/300x300?text=Molde+Tigela' },
             { id: 2, nome: 'Cortador Estrela', descricao: 'Cortador em formato de estrela', categoria: 'cortadores', imagem: 'https://via.placeholder.com/300x300?text=Cortador+Estrela' },
             { id: 3, nome: 'Espátula de Modelagem', descricao: 'Ferramenta de aço com ponta fina', categoria: 'ferramentas', imagem: 'https://via.placeholder.com/300x300?text=Espátula' },
             { id: 4, nome: 'Conjunto Vasos', descricao: '3 moldes para vasos de tamanhos diferentes', categoria: 'conjuntos', imagem: 'https://via.placeholder.com/300x300?text=Conjunto+Vasos' },
         ];
-        let configSite = JSON.parse(localStorage.getItem('moldae_config')) || {
+
+        let configSite = {
             logoUrl: 'https://via.placeholder.com/150x80?text=MOLDAE',
             logoTamanho: 64,
             bannerTitulo: 'Moldes e Cortadores para Cerâmica',
@@ -337,6 +308,7 @@
             corSecundaria: '#8b5a2b',
             fonte: "'Inter', sans-serif"
         };
+
         let proximoId = produtos.length ? Math.max(...produtos.map(p => p.id)) + 1 : 1;
 
         // Elementos
@@ -374,7 +346,7 @@
             document.getElementById('erro-login').classList.add('hidden');
         });
 
-        // ========== NAVEGAÇÃO DE CATEGORIAS ==========
+        // ========== NAVEGAÇÃO ==========
         botoesCategoria.forEach(botao => {
             botao.addEventListener('click', () => {
                 const cat = botao.dataset.categoria;
@@ -382,14 +354,12 @@
                     b.classList.remove('ativa', 'text-secundario', 'border-b-2', 'border-secundario', 'pb-1');
                 });
                 botao.classList.add('ativa', 'text-secundario', 'border-b-2', 'border-secundario', 'pb-1');
-                conteudosCategoria.forEach(cont => {
-                    cont.classList.remove('ativa');
-                });
+                conteudosCategoria.forEach(cont => cont.classList.remove('ativa'));
                 document.getElementById(`cat-${cat}`).classList.add('ativa');
             });
         });
 
-        // ========== RENDERIZAR PRODUTOS ==========
+        // ========== RENDERIZAR CATÁLOGO ==========
         function renderizarCatalogo() {
             const categorias = ['todos', 'ferramentas', 'moldes', 'cortadores', 'conjuntos'];
             categorias.forEach(cat => {
@@ -404,8 +374,7 @@
                         <div class="p-4">
                             <h3 class="font-semibold text-lg mb-2">${prod.nome}</h3>
                             <p class="text-gray-600 text-sm mb-4">${prod.descricao || 'Sem descrição'}</p>
-                            <a href="https://instagram.com/moldae_ceramica" target="_blank" 
-                               class="block w-full text-center bg-[#E4405F] text-white py-2 rounded-lg hover:bg-opacity-90 transicao">
+                            <a href="https://instagram.com/moldae_ceramica" target="_blank" class="block w-full text-center bg-[#E4405F] text-white py-2 rounded-lg hover:bg-opacity-90 transicao">
                                 <i class="fa fa-instagram mr-1"></i> Pedir no Instagram
                             </a>
                         </div>
@@ -444,7 +413,6 @@
             atualizarBotoesExclusao();
         }
 
-        // Seleção múltipla
         document.addEventListener('change', e => {
             if (e.target.classList.contains('checkbox-produto') || e.target.id === 'selecionar-todos') {
                 atualizarBotoesExclusao();
@@ -461,24 +429,20 @@
             const ids = Array.from(document.querySelectorAll('.checkbox-produto:checked')).map(cb => parseInt(cb.dataset.id));
             if (ids.length && confirm(`Excluir ${ids.length} produto(s)?`)) {
                 produtos = produtos.filter(p => !ids.includes(p.id));
-                salvarDados();
                 renderizarTabelaProdutos();
                 renderizarCatalogo();
             }
         });
 
-        // Excluir individual
         document.addEventListener('click', e => {
             if (e.target.closest('.excluir-produto')) {
                 const id = parseInt(e.target.closest('.excluir-produto').dataset.id);
                 if (confirm('Excluir este produto?')) {
                     produtos = produtos.filter(p => p.id !== id);
-                    salvarDados();
                     renderizarTabelaProdutos();
                     renderizarCatalogo();
                 }
             }
-            // Editar
             if (e.target.closest('.editar-produto')) {
                 const id = parseInt(e.target.closest('.editar-produto').dataset.id);
                 const prod = produtos.find(p => p.id === id);
@@ -493,7 +457,6 @@
             }
         });
 
-        // Formulário de produto
         document.getElementById('form-produto').addEventListener('submit', e => {
             e.preventDefault();
             const id = document.getElementById('produto-id').value;
@@ -504,20 +467,18 @@
                 imagem: document.getElementById('produto-imagem').value || 'https://via.placeholder.com/300x300?text=Sem+Imagem'
             };
             if (id) {
-                // Edição
                 const indice = produtos.findIndex(p => p.id === parseInt(id));
                 if (indice !== -1) produtos[indice] = { ...produtos[indice], ...dados };
             } else {
-                // Novo
                 produtos.push({ id: proximoId++, ...dados });
             }
-            salvarDados();
             document.getElementById('form-produto').reset();
             document.getElementById('produto-id').value = '';
             renderizarTabelaProdutos();
             renderizarCatalogo();
             document.querySelector('[data-aba="produtos"]').click();
         });
+
         document.getElementById('botao-cancelar').addEventListener('click', () => {
             document.getElementById('produto-id').value = '';
             document.querySelector('[data-aba="produtos"]').click();
@@ -550,6 +511,7 @@
             document.getElementById('fonte-principal').value = configSite.fonte;
             aplicarConfig();
         }
+
         function aplicarConfig() {
             document.getElementById('logo-site').src = configSite.logoUrl;
             document.getElementById('logo-site').style.height = `${configSite.logoTamanho}px`;
@@ -558,16 +520,13 @@
             document.documentElement.style.setProperty('--cor-primario', configSite.corPrincipal);
             document.documentElement.style.setProperty('--cor-secundario', configSite.corSecundaria);
             document.body.style.fontFamily = configSite.fonte;
-            // Atualizar classes com cores
-            document.querySelectorAll('.bg-primario, .bg-secundario, .text-secundario, .border-secundario').forEach(el => {
-                el.style.transition = 'background-color 0.3s, color 0.3s, border-color 0.3s';
-            });
         }
-        // Visualização em tempo real do tamanho da logo
+
         document.getElementById('config-logo-tamanho').addEventListener('input', function() {
             document.getElementById('valor-tamanho-logo').textContent = this.value;
             document.getElementById('logo-site').style.height = `${this.value}px`;
         });
+
         document.getElementById('salvar-aparencia').addEventListener('click', () => {
             configSite = {
                 logoUrl: document.getElementById('config-logo-url').value,
@@ -578,19 +537,49 @@
                 corSecundaria: document.getElementById('cor-secundaria').value,
                 fonte: document.getElementById('fonte-principal').value
             };
-            localStorage.setItem('moldae_config', JSON.stringify(configSite));
             aplicarConfig();
-            alert('Configurações salvas!');
+            alert('Configurações aplicadas! Clique em "Salvar Arquivo" para gerar o código atualizado.');
         });
 
-        // ========== PERSISTÊNCIA ==========
-        function salvarDados() {
-            localStorage.setItem('moldae_produtos', JSON.stringify(produtos));
+        // ========== GERA CÓDIGO ATUALIZADO PARA DOWNLOAD ==========
+        document.getElementById('botao-exportar').addEventListener('click', () => {
+            gerarEBaixarArquivo();
+        });
+
+        function gerarEBaixarArquivo() {
+            // Cria o bloco de dados atualizados em formato JS
+            const dadosAtualizados = `
+        // DADOS GERADOS AUTOMATICAMENTE — NÃO EDITE MANUALMENTE
+        let produtos = ${JSON.stringify(produtos, null, 4)};
+        let configSite = ${JSON.stringify(configSite, null, 4)};
+        let proximoId = ${proximoId};
+        // FIM DOS DADOS
+            `;
+
+            // Lê o HTML atual e substitui a seção de dados
+            const htmlOriginal = document.documentElement.outerHTML;
+            
+            // Padrão para encontrar e substituir o bloco de dados
+            const padraoDados = /let produtos = \[[\s\S]*?\];[\s\S]*?let configSite = \{[\s\S]*?\};[\s\S]*?let proximoId = \d+;/;
+            
+            let htmlFinal = htmlOriginal.replace(padraoDados, dadosAtualizados.trim());
+
+            // Cria o arquivo para download
+            const blob = new Blob([htmlFinal], { type: 'text/html;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'moldae-ceramica.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            alert('✅ Arquivo salvo com sucesso!\n\nSubstitua o arquivo original por este novo baixado.');
         }
 
         // ========== INICIALIZAÇÃO ==========
         renderizarCatalogo();
-        carregarConfigInterface();
     </script>
 </body>
 </html>
