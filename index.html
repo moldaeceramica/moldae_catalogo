@@ -204,7 +204,8 @@
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-1">URL da Imagem</label>
-                            <input type="url" id="produto-imagem" class="w-full px-4 py-2 border rounded-lg">
+                            <input type="url" id="produto-imagem" placeholder="https://..." class="w-full px-4 py-2 border rounded-lg">
+                            <p class="text-xs text-gray-500 mt-1">Cole o endereço da imagem</p>
                         </div>
                         <div class="flex gap-3">
                             <button type="submit" class="bg-secundario text-white px-6 py-2 rounded-lg hover:bg-secundario/90 transicao">Salvar Produto</button>
@@ -291,7 +292,7 @@
         // Dados
         const credenciais = { usuario: 'Rhode', senha: 'Island' };
         
-        // PRODUTOS PADRÃO
+        // PRODUTOS PADRÃO — Eles ficam salvos AQUI no código
         let produtos = [
             { id: 1, nome: 'Molde Tigela Redonda', descricao: 'Molde de gesso para tigela, tamanho 15cm', categoria: 'moldes', imagem: 'https://via.placeholder.com/300x300?text=Molde+Tigela' },
             { id: 2, nome: 'Cortador Estrela', descricao: 'Cortador em formato de estrela', categoria: 'cortadores', imagem: 'https://via.placeholder.com/300x300?text=Cortador+Estrela' },
@@ -309,9 +310,12 @@
             fonte: "'Inter', sans-serif"
         };
         
-        // Carregar do localStorage
+        // Carregar do localStorage se tiver edições em andamento
         const dadosSalvos = localStorage.getItem('moldae_produtos');
-        if (dadosSalvos) produtos = JSON.parse(dadosSalvos);
+        if (dadosSalvos) {
+            const carregados = JSON.parse(dadosSalvos);
+            if (carregados && carregados.length > 0) produtos = carregados;
+        }
         
         const configSalvo = localStorage.getItem('moldae_config');
         if (configSalvo) configSite = JSON.parse(configSalvo);
@@ -371,7 +375,6 @@
         function aplicarConfig() {
             document.getElementById('logo-site').src = configSite.logoUrl;
             document.getElementById('logo-site').style.height = `${configSite.logoTamanho}px`;
-            // ✅ CORRIGIDO: Define os textos diretamente
             document.getElementById('titulo-banner').textContent = configSite.bannerTitulo;
             document.getElementById('subtitulo-banner').textContent = configSite.bannerSubtitulo;
             document.body.style.fontFamily = configSite.fonte;
@@ -543,7 +546,7 @@
             aplicarConfig();
         }
         
-        // Visualização em tempo real do tamanho da logo
+        // Tamanho da logo em tempo real
         document.getElementById('config-logo-tamanho').addEventListener('input', function() {
             document.getElementById('valor-tamanho-logo').textContent = this.value;
             document.getElementById('logo-site').style.height = `${this.value}px`;
@@ -571,12 +574,16 @@
             localStorage.setItem('moldae_produtos', JSON.stringify(produtos));
         }
         
-        // ========== GERAR CÓDIGO COMPLETO ==========
+        // ========== GERAR CÓDIGO COMPLETO PARA COPIAR ==========
         function gerarCodigoCompleto() {
+            // Escapar aspas simples para não quebrar o código
+            const escapar = (texto) => (texto || '').replace(/'/g, "\\'");
+            
             const produtosCodigo = produtos.map(p => 
-`            { id: ${p.id}, nome: '${p.nome.replace(/'/g, "\\'")}', descricao: '${(p.descricao||'').replace(/'/g, "\\'")}', categoria: '${p.categoria}', imagem: '${p.imagem}' }`
+`            { id: ${p.id}, nome: '${escapar(p.nome)}', descricao: '${escapar(p.descricao)}', categoria: '${p.categoria}', imagem: '${p.imagem}' }`
             ).join(',\n');
             
+            // Código completo com TUDO atualizado
             const codigoGerado = `<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -695,7 +702,7 @@
                 </div>
                 <p id="erro-login" class="text-red-500 text-sm hidden">Usuário ou senha incorretos</p>
                 <button id="botao-entrar" class="w-full bg-secundario text-white py-2 rounded-lg hover:bg-secundario/90 transicao">Entrar</button>
-            </div>
+                </div>
             <button id="botao-fechar-login" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
                 <i class="fa fa-times"></i>
             </button>
@@ -766,14 +773,4 @@
                             <label class="block text-sm font-medium mb-1">Categoria</label>
                             <select id="produto-categoria" class="w-full px-4 py-2 border rounded-lg">
                                 <option value="ferramentas">Ferramentas</option>
-                                <option value="moldes">Moldes</option>
-                                <option value="cortadores">Cortadores</option>
-                                <option value="conjuntos">Conjuntos</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium mb-1">URL da Imagem</label>
-                            <input type="url" id="produto-imagem" class="w-full px-4 py-2 border rounded-lg">
-                        </div>
-                        <div class="flex gap-3">
-                            <button type="submit" class
+                                <option
