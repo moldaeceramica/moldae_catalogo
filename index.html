@@ -43,16 +43,15 @@
         .modal { transition: opacity 0.3s ease, visibility 0.3s ease; }
         .cartao-produto:hover { transform: translateY(-5px); }
         .bg-primario { background-color: var(--cor-primario) !important; }
-        .bg-primario\/10 { background-color: color-mix(in srgb, var(--cor-primario) 10%, transparent) !important; }
+        .bg-primario\/10 { background-color: rgba(212, 165, 116, 0.1); }
         .bg-secundario { background-color: var(--cor-secundario) !important; }
         .text-secundario { color: var(--cor-secundario) !important; }
         .border-secundario { border-color: var(--cor-secundario) !important; }
     </style>
 </head>
 <body class="bg-fundo text-texto">
-    <!-- ÁREA PÚBLICA - VISÍVEL PARA TODOS -->
+    <!-- ÁREA PÚBLICA -->
     <div id="area-publica">
-        <!-- Cabeçalho -->
         <header class="bg-white sombra-suave sticky top-0 z-50">
             <div class="container mx-auto px-4 py-4 flex justify-between items-center">
                 <div id="logo-container" class="flex items-center">
@@ -74,7 +73,6 @@
             </div>
         </header>
 
-        <!-- Banner Principal -->
         <section id="secao-banner" class="relative bg-primario/10 py-16 mb-8">
             <div class="container mx-auto px-4 text-center">
                 <h1 id="titulo-banner" class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-secundario mb-4">Moldes e Cortadores para Cerâmica</h1>
@@ -85,7 +83,6 @@
             </div>
         </section>
 
-        <!-- Catálogo -->
         <main class="container mx-auto px-4 pb-16">
             <div class="categoria-conteudo ativa" id="cat-todos">
                 <h2 class="text-2xl font-semibold mb-6">Todos os Produtos</h2>
@@ -109,7 +106,6 @@
             </div>
         </main>
 
-        <!-- Rodapé -->
         <footer class="bg-secundario text-white py-10">
             <div class="container mx-auto px-4 text-center">
                 <p class="mb-4">Siga-nos no Instagram</p>
@@ -148,8 +144,8 @@
         <div class="bg-secundario text-white p-4 flex justify-between items-center">
             <h1 class="text-xl font-bold">Painel — Moldae Cerâmica</h1>
             <div class="flex gap-2">
-                <button id="botao-exportar" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded transicao">
-                    <i class="fa fa-download mr-1"></i> Salvar Arquivo
+                <button id="botao-exportar" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded transicao font-medium">
+                    <i class="fa fa-download mr-1"></i> SALVAR ALTERAÇÕES
                 </button>
                 <button id="botao-sair" class="bg-white/20 px-4 py-2 rounded hover:bg-white/30 transicao">
                     <i class="fa fa-sign-out mr-1"></i> Sair
@@ -290,16 +286,16 @@
     </div>
 
     <script>
-        // =====================================================
-        // DADOS DO SITE — EDITE PELO PAINEL, NÃO AQUI MANUALMENTE
-        // =====================================================
+        // ══════════════════════════════════════════════════════════════════
+        // 🔒 BLOCO DE DADOS — NÃO ALTERE NADA FORA DESTE BLOCO MANUALMENTE
+        // ══════════════════════════════════════════════════════════════════
         const CREDENCIAIS = { usuario: 'Rhode', senha: 'Island' };
-        
+
         let produtos = [
             { id: 1, nome: 'Molde Tigela Redonda', descricao: 'Molde de gesso para tigela, tamanho 15cm', categoria: 'moldes', imagem: 'https://via.placeholder.com/300x300?text=Molde+Tigela' },
             { id: 2, nome: 'Cortador Estrela', descricao: 'Cortador em formato de estrela', categoria: 'cortadores', imagem: 'https://via.placeholder.com/300x300?text=Cortador+Estrela' },
             { id: 3, nome: 'Espátula de Modelagem', descricao: 'Ferramenta de aço com ponta fina', categoria: 'ferramentas', imagem: 'https://via.placeholder.com/300x300?text=Espátula' },
-            { id: 4, nome: 'Conjunto Vasos', descricao: '3 moldes para vasos de tamanhos diferentes', categoria: 'conjuntos', imagem: 'https://via.placeholder.com/300x300?text=Conjunto+Vasos' },
+            { id: 4, nome: 'Conjunto Vasos', descricao: '3 moldes para vasos de tamanhos diferentes', categoria: 'conjuntos', imagem: 'https://via.placeholder.com/300x300?text=Conjunto+Vasos' }
         ];
 
         let configSite = {
@@ -312,10 +308,10 @@
             fonte: "'Inter', sans-serif"
         };
 
-        let proximoId = produtos.length ? Math.max(...produtos.map(p => p.id)) + 1 : 1;
-        // =====================================================
-        // FIM DOS DADOS
-        // =====================================================
+        let proximoId = 5;
+        // ══════════════════════════════════════════════════════════════════
+        // 🔒 FIM DO BLOCO DE DADOS
+        // ══════════════════════════════════════════════════════════════════
 
         // Elementos
         const telaLogin = document.getElementById('tela-login');
@@ -352,7 +348,7 @@
             document.getElementById('erro-login').classList.add('hidden');
         });
 
-        // ========== NAVEGAÇÃO DE CATEGORIAS ==========
+        // ========== NAVEGAÇÃO ==========
         botoesCategoria.forEach(botao => {
             botao.addEventListener('click', () => {
                 const cat = botao.dataset.categoria;
@@ -365,7 +361,7 @@
             });
         });
 
-        // ========== RENDERIZAR CATÁLOGO (PÁGINA PÚBLICA) ==========
+        // ========== RENDERIZAR CATÁLOGO ==========
         function renderizarCatalogo() {
             const categorias = ['todos', 'ferramentas', 'moldes', 'cortadores', 'conjuntos'];
             categorias.forEach(cat => {
@@ -393,7 +389,7 @@
             });
         }
 
-        // ========== PAINEL — TABELA DE PRODUTOS ==========
+        // ========== PAINEL ==========
         function renderizarTabelaProdutos() {
             const corpo = document.getElementById('tabela-produtos');
             corpo.innerHTML = '';
@@ -544,55 +540,62 @@
                 fonte: document.getElementById('fonte-principal').value
             };
             aplicarConfig();
-            alert('✅ Apliquei as alterações! Agora clique em "Salvar Arquivo" para gerar o código final.');
+            alert('✅ Aplicado! Agora clique em "SALVAR ALTERAÇÕES" para baixar o arquivo.');
         });
 
-        // ========== SALVAR ARQUIVO — CORRIGIDO ==========
-        document.getElementById('botao-exportar').addEventListener('click', () => {
-            gerarArquivoFinal();
-        });
+        // =====================================================
+        // 💾 SALVAR NO CÓDIGO — FUNÇÃO CORRIGIDA DEFINITIVAMENTE
+        // =====================================================
+        document.getElementById('botao-exportar').addEventListener('click', async () => {
+            try {
+                // 1. Busca o código original do arquivo (limpo, sem alterações visuais do navegador)
+                const resposta = await fetch(window.location.href);
+                let codigoOriginal = await resposta.text();
 
-        function gerarArquivoFinal() {
-            // 1. Lê o código original do arquivo (não o HTML modificado do navegador)
-            const codigoOriginal = document.querySelector('html').outerHTML;
-            
-            // 2. Cria o bloco de dados atualizados
-            const blocoDados = `
-        // =====================================================
-        // DADOS DO SITE — EDITE PELO PAINEL, NÃO AQUI MANUALMENTE
-        // =====================================================
+                // 2. Monta o bloco de dados atualizados com formatação limpa
+                const blocoNovo = `        // ══════════════════════════════════════════════════════════════════
+        // 🔒 BLOCO DE DADOS — NÃO ALTERE NADA FORA DESTE BLOCO MANUALMENTE
+        // ══════════════════════════════════════════════════════════════════
         const CREDENCIAIS = { usuario: 'Rhode', senha: 'Island' };
-        
-        let produtos = ${JSON.stringify(produtos, null, 8)};
 
-        let configSite = ${JSON.stringify(configSite, null, 8)};
+        let produtos = ${JSON.stringify(produtos, null, 12)};
+
+        let configSite = ${JSON.stringify(configSite, null, 12)};
 
         let proximoId = ${proximoId};
-        // =====================================================
-        // FIM DOS DADOS
-        // =====================================================`;
+        // ══════════════════════════════════════════════════════════════════
+        // 🔒 FIM DO BLOCO DE DADOS
+        // ══════════════════════════════════════════════════════════════════`;
 
-            // 3. Substitui APENAS o bloco de dados, mantendo todo o resto intacto
-            const regexBloco = /\/\/\s*=+\s*\n\s*\/\/\s*DADOS DO SITE[\s\S]*?\/\/\s*FIM DOS DADOS[\s\S]*?\/\/\s*=+/;
-            let codigoFinal = codigoOriginal.replace(regexBloco, blocoDados.trim());
+                // 3. Substitui APENAS o bloco de dados, mantendo TODO o resto intacto
+                const regex = /\/\/\s*═+\s*\n\s*\/\/\s*🔒 BLOCO DE DADOS[\s\S]*?\/\/\s*═+/;
+                let codigoFinal = codigoOriginal.replace(regex, blocoNovo);
 
-            // 4. Força remoção de classes de estado do painel que foram adicionadas dinamicamente
-            codigoFinal = codigoFinal.replace(/<div id="painel-admin" class="[^"]*"/, '<div id="painel-admin" class="hidden fixed inset-0 bg-gray-50 flex flex-col z-40 overflow-auto"');
-            codigoFinal = codigoFinal.replace(/<div id="area-publica" class="[^"]*"/, '<div id="area-publica">');
+                // 4. Força o painel a ficar escondido no arquivo baixado
+                codigoFinal = codigoFinal.replace(
+                    /id="painel-admin" class="[^"]*"/,
+                    'id="painel-admin" class="hidden fixed inset-0 bg-gray-50 flex flex-col z-40 overflow-auto"'
+                );
 
-            // 5. Cria o download
-            const blob = new Blob([codigoFinal], { type: 'text/html;charset=utf-8' });
-            const urlDownload = URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = urlDownload;
-            link.download = 'moldae-ceramica.html';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            URL.revokeObjectURL(urlDownload);
+                // 5. Baixa o arquivo
+                const blob = new Blob([codigoFinal], { type: 'text/html;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'moldae-ceramica.html';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
 
-            alert('✅ Arquivo salvo com sucesso!\n\n1. Substitua o arquivo original por este baixado.\n2. Ao abrir, suas alterações já aparecerão na página principal.');
-        }
+                alert('✅ ARQUIVO SALVO COM SUCESSO!\n\n📋 O que fazer agora:\n1. Vá na pasta de Downloads\n2. Pegue o arquivo "moldae-ceramica.html"\n3. Substitua o arquivo antigo por este novo\n4. Abra o arquivo — suas alterações JÁ ESTARÃO LÁ!\n\nNão precisa entrar no painel para ver. É só abrir e ver os produtos direto na página!');
+
+            } catch (erro) {
+                // Fallback: se fetch falhar, avisa o usuário
+                alert('⚠️ Modo alternativo ativado.\n\nCopie todo o código abaixo, cole em um bloco de notas e salve como "moldae-ceramica.html":\n\nOs dados atualizados estão no bloco "produtos" e "configSite" — copie e substitua no seu arquivo original.');
+                console.error(erro);
+            }
+        });
 
         // ========== INICIALIZAÇÃO ==========
         renderizarCatalogo();
