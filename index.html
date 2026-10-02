@@ -1,4 +1,6 @@
-<html lang="pt-BR" style="--cor-primario: #d4a574; --cor-secundario: #8b5a2b;"><head>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moldae Cerâmica | Moldes e Cortadores</title>
@@ -30,50 +32,31 @@
     </style>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        * { font-family: 'Inter', sans-serif; }
+        :root {
+            --cor-primario: #d4a574;
+            --cor-secundario: #8b5a2b;
+            --fonte-principal: 'Inter', sans-serif;
+        }
+        * { font-family: var(--fonte-principal); }
         .categoria-conteudo { display: none; }
         .categoria-conteudo.ativa { display: block; }
         .modal { transition: opacity 0.3s ease, visibility 0.3s ease; }
         .cartao-produto:hover { transform: translateY(-5px); }
-        :root {
-            --cor-primario: #d4a574;
-            --cor-secundario: #8b5a2b;
-        }
         .bg-primario { background-color: var(--cor-primario) !important; }
         .bg-primario\/10 { background-color: color-mix(in srgb, var(--cor-primario) 10%, transparent) !important; }
         .bg-secundario { background-color: var(--cor-secundario) !important; }
         .text-secundario { color: var(--cor-secundario) !important; }
         .border-secundario { border-color: var(--cor-secundario) !important; }
     </style>
-<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.right-4{right:1rem}.top-0{top:0px}.top-4{top:1rem}.z-40{z-index:40}.z-50{z-index:50}.col-span-full{grid-column:1 / -1}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mr-1{margin-right:0.25rem}.mr-2{margin-right:0.5rem}.mt-1{margin-top:0.25rem}.mt-6{margin-top:1.5rem}.mb-2{margin-bottom:0.5rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-16{height:4rem}.h-64{height:16rem}.h-12{height:3rem}.w-10{width:2.5rem}.w-full{width:100%}.w-12{width:3rem}.max-w-2xl{max-width:42rem}.max-w-md{max-width:28rem}.flex-1{flex:1 1 0%}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-auto{overflow:auto}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-secundario{--tw-border-opacity:1;border-color:rgb(139 90 43 / var(--tw-border-opacity, 1))}.bg-\[\#E4405F\]{--tw-bg-opacity:1;background-color:rgb(228 64 95 / var(--tw-bg-opacity, 1))}.bg-black\/50{background-color:rgb(0 0 0 / 0.5)}.bg-fundo{--tw-bg-opacity:1;background-color:rgb(249 246 240 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-green-600{--tw-bg-opacity:1;background-color:rgb(22 163 74 / var(--tw-bg-opacity, 1))}.bg-primario\/10{background-color:rgb(212 165 116 / 0.1)}.bg-red-500{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity, 1))}.bg-secundario{--tw-bg-opacity:1;background-color:rgb(139 90 43 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/20{background-color:rgb(255 255 255 / 0.2)}.object-contain{object-fit:contain}.object-cover{object-fit:cover}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-1{padding-bottom:0.25rem}.pb-16{padding-bottom:4rem}.text-left{text-align:left}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-\[clamp\(1\.8rem\2c 4vw\2c 3rem\)\]{font-size:clamp(1.8rem,4vw,3rem)}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.capitalize{text-transform:capitalize}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-red-500{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.text-secundario{--tw-text-opacity:1;color:rgb(139 90 43 / var(--tw-text-opacity, 1))}.text-texto{--tw-text-opacity:1;color:rgb(51 51 51 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-blue-500{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.opacity-70{opacity:0.7}.outline-none{outline:2px solid transparent;outline-offset:2px}.transicao { transition: all 0.3s ease; }.sombra-suave { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-        .hover\:bg-gray-200:hover{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}
-        .hover\:bg-gray-300:hover{--tw-bg-opacity:1;background-color:rgb(209 213 219 / var(--tw-bg-opacity, 1))}
-        .hover\:bg-green-700:hover{--tw-bg-opacity:1;background-color:rgb(21 128 61 / var(--tw-bg-opacity, 1))}
-        .hover\:bg-red-600:hover{--tw-bg-opacity:1;background-color:rgb(220 38 38 / var(--tw-bg-opacity, 1))}
-        .hover\:bg-secundario\/90:hover{background-color:rgb(139 90 43 / 0.9)}
-        .hover\:bg-white\/30:hover{background-color:rgb(255 255 255 / 0.3)}
-        .hover\:bg-gray-50:hover{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}
-        .hover\:bg-opacity-90:hover{--tw-bg-opacity:0.9}
-        .hover\:text-gray-700:hover{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}
-        .hover\:text-primario:hover{--tw-text-opacity:1;color:rgb(212 165 116 / var(--tw-text-opacity, 1))}
-        .hover\:text-secundario:hover{--tw-text-opacity:1;color:rgb(139 90 43 / var(--tw-text-opacity, 1))}
-        .hover\:text-blue-700:hover{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity, 1))}
-        .hover\:text-red-700:hover{--tw-text-opacity:1;color:rgb(185 28 28 / var(--tw-text-opacity, 1))}
-        .focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}
-        .focus\:ring-secundario:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(139 90 43 / var(--tw-ring-opacity, 1))}
-        .disabled\:opacity-50:disabled{opacity:0.5}
-        @media (min-width: 640px){.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}
-        @media (min-width: 768px){.md\:flex{display:flex}.md\:hidden{display:none}.md\:w-64{width:16rem}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}}
-        @media (min-width: 1024px){.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}}
-    </style></head>
-<body class="bg-fundo text-texto" style="font-family: Inter, sans-serif;">
-    <!-- Área Pública -->
-    <div id="area-publica" class="hidden">
+</head>
+<body class="bg-fundo text-texto">
+    <!-- ÁREA PÚBLICA - VISÍVEL PARA TODOS -->
+    <div id="area-publica">
         <!-- Cabeçalho -->
         <header class="bg-white sombra-suave sticky top-0 z-50">
             <div class="container mx-auto px-4 py-4 flex justify-between items-center">
                 <div id="logo-container" class="flex items-center">
-                    <img id="logo-site" src="https://via.placeholder.com/150x80?text=MOLDAE" alt="Logo Moldae Cerâmica" class="h-16 object-contain" style="height: 64px;">
+                    <img id="logo-site" src="https://via.placeholder.com/150x80?text=MOLDAE" alt="Logo Moldae Cerâmica" class="h-16 object-contain">
                 </div>
                 <nav class="hidden md:flex gap-8 font-medium">
                     <button class="categoria-botao ativa text-secundario border-b-2 border-secundario pb-1" data-categoria="todos">Início</button>
@@ -106,59 +89,23 @@
         <main class="container mx-auto px-4 pb-16">
             <div class="categoria-conteudo ativa" id="cat-todos">
                 <h2 class="text-2xl font-semibold mb-6">Todos os Produtos</h2>
-                <div id="grade-todos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"><div class="bg-white rounded-xl overflow-hidden sombra-suave cartao-produto transicao">
-                        <img src="https://via.placeholder.com/300x300?text=Cortador+Estrela" alt="Cortador Estrela" class="w-full h-64 object-cover">
-                        <div class="p-4">
-                            <h3 class="font-semibold text-lg mb-2">Cortador Estrela</h3>
-                            <p class="text-gray-600 text-sm mb-4">Cortador em formato de estrela</p>
-                            <a href="https://instagram.com/moldae_ceramica" target="_blank" class="block w-full text-center bg-[#E4405F] text-white py-2 rounded-lg hover:bg-opacity-90 transicao">
-                                <i class="fa fa-instagram mr-1"></i> Pedir no Instagram
-                            </a>
-                        </div>
-                    </div><div class="bg-white rounded-xl overflow-hidden sombra-suave cartao-produto transicao">
-                        <img src="https://via.placeholder.com/300x300?text=Conjunto+Vasos" alt="Conjunto Vasos" class="w-full h-64 object-cover">
-                        <div class="p-4">
-                            <h3 class="font-semibold text-lg mb-2">Conjunto Vasos</h3>
-                            <p class="text-gray-600 text-sm mb-4">3 moldes para vasos de tamanhos diferentes</p>
-                            <a href="https://instagram.com/moldae_ceramica" target="_blank" class="block w-full text-center bg-[#E4405F] text-white py-2 rounded-lg hover:bg-opacity-90 transicao">
-                                <i class="fa fa-instagram mr-1"></i> Pedir no Instagram
-                            </a>
-                        </div>
-                    </div></div>
+                <div id="grade-todos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
             </div>
             <div class="categoria-conteudo" id="cat-ferramentas">
                 <h2 class="text-2xl font-semibold mb-6">Ferramentas</h2>
-                <div id="grade-ferramentas" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"><p class="col-span-full text-center text-gray-500 py-8">Nenhum produto nesta categoria ainda.</p></div>
+                <div id="grade-ferramentas" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
             </div>
             <div class="categoria-conteudo" id="cat-moldes">
                 <h2 class="text-2xl font-semibold mb-6">Moldes</h2>
-                <div id="grade-moldes" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"><p class="col-span-full text-center text-gray-500 py-8">Nenhum produto nesta categoria ainda.</p></div>
+                <div id="grade-moldes" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
             </div>
             <div class="categoria-conteudo" id="cat-cortadores">
                 <h2 class="text-2xl font-semibold mb-6">Cortadores</h2>
-                <div id="grade-cortadores" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"><div class="bg-white rounded-xl overflow-hidden sombra-suave cartao-produto transicao">
-                        <img src="https://via.placeholder.com/300x300?text=Cortador+Estrela" alt="Cortador Estrela" class="w-full h-64 object-cover">
-                        <div class="p-4">
-                            <h3 class="font-semibold text-lg mb-2">Cortador Estrela</h3>
-                            <p class="text-gray-600 text-sm mb-4">Cortador em formato de estrela</p>
-                            <a href="https://instagram.com/moldae_ceramica" target="_blank" class="block w-full text-center bg-[#E4405F] text-white py-2 rounded-lg hover:bg-opacity-90 transicao">
-                                <i class="fa fa-instagram mr-1"></i> Pedir no Instagram
-                            </a>
-                        </div>
-                    </div></div>
+                <div id="grade-cortadores" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
             </div>
             <div class="categoria-conteudo" id="cat-conjuntos">
                 <h2 class="text-2xl font-semibold mb-6">Conjuntos</h2>
-                <div id="grade-conjuntos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"><div class="bg-white rounded-xl overflow-hidden sombra-suave cartao-produto transicao">
-                        <img src="https://via.placeholder.com/300x300?text=Conjunto+Vasos" alt="Conjunto Vasos" class="w-full h-64 object-cover">
-                        <div class="p-4">
-                            <h3 class="font-semibold text-lg mb-2">Conjunto Vasos</h3>
-                            <p class="text-gray-600 text-sm mb-4">3 moldes para vasos de tamanhos diferentes</p>
-                            <a href="https://instagram.com/moldae_ceramica" target="_blank" class="block w-full text-center bg-[#E4405F] text-white py-2 rounded-lg hover:bg-opacity-90 transicao">
-                                <i class="fa fa-instagram mr-1"></i> Pedir no Instagram
-                            </a>
-                        </div>
-                    </div></div>
+                <div id="grade-conjuntos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
             </div>
         </main>
 
@@ -197,7 +144,7 @@
     </div>
 
     <!-- Painel Administrativo -->
-    <div id="painel-admin" class="fixed inset-0 bg-gray-50 flex flex-col z-40 overflow-auto">
+    <div id="painel-admin" class="hidden fixed inset-0 bg-gray-50 flex flex-col z-40 overflow-auto">
         <div class="bg-secundario text-white p-4 flex justify-between items-center">
             <h1 class="text-xl font-bold">Painel — Moldae Cerâmica</h1>
             <div class="flex gap-2">
@@ -227,7 +174,7 @@
                 <section class="conteudo-aba" id="aba-produtos">
                     <div class="flex justify-between items-center mb-6">
                         <h2 class="text-xl font-semibold">Gerenciar Produtos</h2>
-                        <button id="botao-excluir-selecionados" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transicao disabled:opacity-50" disabled="">
+                        <button id="botao-excluir-selecionados" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transicao disabled:opacity-50" disabled>
                             <i class="fa fa-trash mr-1"></i> Excluir Selecionados
                         </button>
                     </div>
@@ -244,33 +191,7 @@
                                     <th class="p-3 text-left">Ações</th>
                                 </tr>
                             </thead>
-                            <tbody id="tabela-produtos"><tr class="border-b hover:bg-gray-50">
-                    <td class="p-3"><input type="checkbox" class="checkbox-produto" data-id="2"></td>
-                    <td class="p-3"><img src="https://via.placeholder.com/300x300?text=Cortador+Estrela" alt="Cortador Estrela" class="w-12 h-12 object-cover rounded"></td>
-                    <td class="p-3">Cortador Estrela</td>
-                    <td class="p-3 capitalize">cortadores</td>
-                    <td class="p-3">
-                        <button class="editar-produto text-blue-500 hover:text-blue-700 mr-2" data-id="2">
-                            <i class="fa fa-pencil"></i> Editar
-                        </button>
-                        <button class="excluir-produto text-red-500 hover:text-red-700" data-id="2">
-                            <i class="fa fa-trash"></i> Excluir
-                        </button>
-                    </td>
-                </tr><tr class="border-b hover:bg-gray-50">
-                    <td class="p-3"><input type="checkbox" class="checkbox-produto" data-id="4"></td>
-                    <td class="p-3"><img src="https://via.placeholder.com/300x300?text=Conjunto+Vasos" alt="Conjunto Vasos" class="w-12 h-12 object-cover rounded"></td>
-                    <td class="p-3">Conjunto Vasos</td>
-                    <td class="p-3 capitalize">conjuntos</td>
-                    <td class="p-3">
-                        <button class="editar-produto text-blue-500 hover:text-blue-700 mr-2" data-id="4">
-                            <i class="fa fa-pencil"></i> Editar
-                        </button>
-                        <button class="excluir-produto text-red-500 hover:text-red-700" data-id="4">
-                            <i class="fa fa-trash"></i> Excluir
-                        </button>
-                    </td>
-                </tr></tbody>
+                            <tbody id="tabela-produtos"></tbody>
                         </table>
                     </div>
                 </section>
@@ -281,7 +202,7 @@
                         <input type="hidden" id="produto-id">
                         <div>
                             <label class="block text-sm font-medium mb-1">Nome do Produto</label>
-                            <input type="text" id="produto-nome" required="" class="w-full px-4 py-2 border rounded-lg">
+                            <input type="text" id="produto-nome" required class="w-full px-4 py-2 border rounded-lg">
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-1">Descrição</label>
@@ -369,8 +290,10 @@
     </div>
 
     <script>
-        // Dados iniciais
-        const credenciais = { usuario: 'Rhode', senha: 'Island' };
+        // =====================================================
+        // DADOS DO SITE — EDITE PELO PAINEL, NÃO AQUI MANUALMENTE
+        // =====================================================
+        const CREDENCIAIS = { usuario: 'Rhode', senha: 'Island' };
         
         let produtos = [
             { id: 1, nome: 'Molde Tigela Redonda', descricao: 'Molde de gesso para tigela, tamanho 15cm', categoria: 'moldes', imagem: 'https://via.placeholder.com/300x300?text=Molde+Tigela' },
@@ -390,6 +313,9 @@
         };
 
         let proximoId = produtos.length ? Math.max(...produtos.map(p => p.id)) + 1 : 1;
+        // =====================================================
+        // FIM DOS DADOS
+        // =====================================================
 
         // Elementos
         const telaLogin = document.getElementById('tela-login');
@@ -408,7 +334,7 @@
         document.getElementById('botao-entrar').addEventListener('click', () => {
             const user = document.getElementById('campo-usuario').value;
             const pass = document.getElementById('campo-senha').value;
-            if (user === credenciais.usuario && pass === credenciais.senha) {
+            if (user === CREDENCIAIS.usuario && pass === CREDENCIAIS.senha) {
                 telaLogin.classList.add('opacity-0', 'invisible');
                 painelAdmin.classList.remove('hidden');
                 areaPublica.classList.add('hidden');
@@ -426,7 +352,7 @@
             document.getElementById('erro-login').classList.add('hidden');
         });
 
-        // ========== NAVEGAÇÃO ==========
+        // ========== NAVEGAÇÃO DE CATEGORIAS ==========
         botoesCategoria.forEach(botao => {
             botao.addEventListener('click', () => {
                 const cat = botao.dataset.categoria;
@@ -439,7 +365,7 @@
             });
         });
 
-        // ========== RENDERIZAR CATÁLOGO ==========
+        // ========== RENDERIZAR CATÁLOGO (PÁGINA PÚBLICA) ==========
         function renderizarCatalogo() {
             const categorias = ['todos', 'ferramentas', 'moldes', 'cortadores', 'conjuntos'];
             categorias.forEach(cat => {
@@ -467,7 +393,7 @@
             });
         }
 
-        // ========== PAINEL — PRODUTOS ==========
+        // ========== PAINEL — TABELA DE PRODUTOS ==========
         function renderizarTabelaProdutos() {
             const corpo = document.getElementById('tabela-produtos');
             corpo.innerHTML = '';
@@ -599,7 +525,7 @@
             document.getElementById('subtitulo-banner').textContent = configSite.bannerSubtitulo;
             document.documentElement.style.setProperty('--cor-primario', configSite.corPrincipal);
             document.documentElement.style.setProperty('--cor-secundario', configSite.corSecundaria);
-            document.body.style.fontFamily = configSite.fonte;
+            document.documentElement.style.setProperty('--fonte-principal', configSite.fonte);
         }
 
         document.getElementById('config-logo-tamanho').addEventListener('input', function() {
@@ -618,49 +544,59 @@
                 fonte: document.getElementById('fonte-principal').value
             };
             aplicarConfig();
-            alert('Configurações aplicadas! Clique em "Salvar Arquivo" para gerar o código atualizado.');
+            alert('✅ Apliquei as alterações! Agora clique em "Salvar Arquivo" para gerar o código final.');
         });
 
-        // ========== GERA CÓDIGO ATUALIZADO PARA DOWNLOAD ==========
+        // ========== SALVAR ARQUIVO — CORRIGIDO ==========
         document.getElementById('botao-exportar').addEventListener('click', () => {
-            gerarEBaixarArquivo();
+            gerarArquivoFinal();
         });
 
-        function gerarEBaixarArquivo() {
-            // Cria o bloco de dados atualizados em formato JS
-            const dadosAtualizados = `
-        // DADOS GERADOS AUTOMATICAMENTE — NÃO EDITE MANUALMENTE
-        let produtos = ${JSON.stringify(produtos, null, 4)};
-        let configSite = ${JSON.stringify(configSite, null, 4)};
+        function gerarArquivoFinal() {
+            // 1. Lê o código original do arquivo (não o HTML modificado do navegador)
+            const codigoOriginal = document.querySelector('html').outerHTML;
+            
+            // 2. Cria o bloco de dados atualizados
+            const blocoDados = `
+        // =====================================================
+        // DADOS DO SITE — EDITE PELO PAINEL, NÃO AQUI MANUALMENTE
+        // =====================================================
+        const CREDENCIAIS = { usuario: 'Rhode', senha: 'Island' };
+        
+        let produtos = ${JSON.stringify(produtos, null, 8)};
+
+        let configSite = ${JSON.stringify(configSite, null, 8)};
+
         let proximoId = ${proximoId};
+        // =====================================================
         // FIM DOS DADOS
-            `;
+        // =====================================================`;
 
-            // Lê o HTML atual e substitui a seção de dados
-            const htmlOriginal = document.documentElement.outerHTML;
-            
-            // Padrão para encontrar e substituir o bloco de dados
-            const padraoDados = /let produtos = \[[\s\S]*?\];[\s\S]*?let configSite = \{[\s\S]*?\};[\s\S]*?let proximoId = \d+;/;
-            
-            let htmlFinal = htmlOriginal.replace(padraoDados, dadosAtualizados.trim());
+            // 3. Substitui APENAS o bloco de dados, mantendo todo o resto intacto
+            const regexBloco = /\/\/\s*=+\s*\n\s*\/\/\s*DADOS DO SITE[\s\S]*?\/\/\s*FIM DOS DADOS[\s\S]*?\/\/\s*=+/;
+            let codigoFinal = codigoOriginal.replace(regexBloco, blocoDados.trim());
 
-            // Cria o arquivo para download
-            const blob = new Blob([htmlFinal], { type: 'text/html;charset=utf-8' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'moldae-ceramica.html';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
+            // 4. Força remoção de classes de estado do painel que foram adicionadas dinamicamente
+            codigoFinal = codigoFinal.replace(/<div id="painel-admin" class="[^"]*"/, '<div id="painel-admin" class="hidden fixed inset-0 bg-gray-50 flex flex-col z-40 overflow-auto"');
+            codigoFinal = codigoFinal.replace(/<div id="area-publica" class="[^"]*"/, '<div id="area-publica">');
 
-            alert('✅ Arquivo salvo com sucesso!\n\nSubstitua o arquivo original por este novo baixado.');
+            // 5. Cria o download
+            const blob = new Blob([codigoFinal], { type: 'text/html;charset=utf-8' });
+            const urlDownload = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = urlDownload;
+            link.download = 'moldae-ceramica.html';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(urlDownload);
+
+            alert('✅ Arquivo salvo com sucesso!\n\n1. Substitua o arquivo original por este baixado.\n2. Ao abrir, suas alterações já aparecerão na página principal.');
         }
 
         // ========== INICIALIZAÇÃO ==========
         renderizarCatalogo();
+        aplicarConfig();
     </script>
-
-
-</body></html>
+</body>
+</html>
