@@ -25,15 +25,9 @@
     </script>
     <style type="text/tailwindcss">
         @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
-            .transicao {
-                transition: all 0.3s ease;
-            }
-            .sombra-suave {
-                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            }
+            .content-auto { content-visibility: auto; }
+            .transicao { transition: all 0.3s ease; }
+            .sombra-suave { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
         }
     </style>
     <style>
@@ -82,27 +76,22 @@
         </section>
         <!-- Catálogo -->
         <main class="container mx-auto px-4 pb-16">
-            <!-- Todos os Produtos -->
             <div class="categoria-conteudo ativa" id="cat-todos">
                 <h2 class="text-2xl font-semibold mb-6">Todos os Produtos</h2>
                 <div id="grade-todos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
             </div>
-            <!-- Ferramentas -->
             <div class="categoria-conteudo" id="cat-ferramentas">
                 <h2 class="text-2xl font-semibold mb-6">Ferramentas</h2>
                 <div id="grade-ferramentas" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
             </div>
-            <!-- Moldes -->
             <div class="categoria-conteudo" id="cat-moldes">
                 <h2 class="text-2xl font-semibold mb-6">Moldes</h2>
                 <div id="grade-moldes" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
             </div>
-            <!-- Cortadores -->
             <div class="categoria-conteudo" id="cat-cortadores">
                 <h2 class="text-2xl font-semibold mb-6">Cortadores</h2>
                 <div id="grade-cortadores" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
             </div>
-            <!-- Conjuntos -->
             <div class="categoria-conteudo" id="cat-conjuntos">
                 <h2 class="text-2xl font-semibold mb-6">Conjuntos</h2>
                 <div id="grade-conjuntos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
@@ -142,7 +131,6 @@
     </div>
     <!-- Painel Administrativo -->
     <div id="painel-admin" class="hidden fixed inset-0 bg-gray-50 flex flex-col z-40 overflow-auto">
-        <!-- Cabeçalho do Painel -->
         <div class="bg-secundario text-white p-4 flex justify-between items-center">
             <h1 class="text-xl font-bold">Painel — Moldae Cerâmica</h1>
             <button id="botao-sair" class="bg-white/20 px-4 py-2 rounded hover:bg-white/30 transicao">
@@ -169,7 +157,6 @@
             </aside>
             <!-- Conteúdo do Painel -->
             <main class="flex-1 p-6">
-                <!-- Aba: Gerenciar Produtos -->
                 <section class="conteudo-aba" id="aba-produtos">
                     <div class="flex justify-between items-center mb-6">
                         <h2 class="text-xl font-semibold">Gerenciar Produtos</h2>
@@ -183,9 +170,7 @@
                         <table class="w-full">
                             <thead>
                                 <tr class="border-b">
-                                    <th class="p-3 text-left w-10">
-                                        <input type="checkbox" id="selecionar-todos">
-                                    </th>
+                                    <th class="p-3 text-left w-10"><input type="checkbox" id="selecionar-todos"></th>
                                     <th class="p-3 text-left">Imagem</th>
                                     <th class="p-3 text-left">Nome</th>
                                     <th class="p-3 text-left">Categoria</th>
@@ -196,7 +181,6 @@
                         </table>
                     </div>
                 </section>
-                <!-- Aba: Adicionar Produto -->
                 <section class="conteudo-aba hidden" id="aba-adicionar">
                     <h2 class="text-xl font-semibold mb-6">Adicionar/Editar Produto</h2>
                     <form id="form-produto" class="bg-white rounded-lg p-6 sombra-suave space-y-4 max-w-2xl">
@@ -220,27 +204,21 @@
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-1">URL da Imagem</label>
-                            <input type="url" id="produto-imagem" placeholder="https://..." class="w-full px-4 py-2 border rounded-lg">
-                            <p class="text-xs text-gray-500 mt-1">Cole o endereço da imagem</p>
+                            <input type="url" id="produto-imagem" class="w-full px-4 py-2 border rounded-lg">
                         </div>
                         <div class="flex gap-3">
-                            <button type="submit" class="bg-secundario text-white px-6 py-2 rounded-lg hover:bg-secundario/90 transicao">
-                                Salvar Produto
-                            </button>
-                            <button type="reset" id="botao-cancelar" class="bg-gray-200 px-6 py-2 rounded-lg hover:bg-gray-300 transicao">
-                                Cancelar
-                            </button>
+                            <button type="submit" class="bg-secundario text-white px-6 py-2 rounded-lg hover:bg-secundario/90 transicao">Salvar Produto</button>
+                            <button type="reset" id="botao-cancelar" class="bg-gray-200 px-6 py-2 rounded-lg hover:bg-gray-300 transicao">Cancelar</button>
                         </div>
                     </form>
                 </section>
-                <!-- Aba: Backup / Código -->
                 <section class="conteudo-aba hidden" id="aba-backup">
                     <h2 class="text-xl font-semibold mb-6">Código Completo — Copie e Salve</h2>
                     <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
-                        <p class="text-sm text-yellow-800 font-medium mb-2">📌 Sempre que adicionar ou alterar um produto:</p>
-                        <p class="text-sm text-yellow-700 mb-2">1. Copie TODO o código da caixa abaixo</p>
-                        <p class="text-sm text-yellow-700 mb-2">2. Vá no GitHub → abra o <code>index.html</code> → Edite ✏️</p>
-                        <p class="text-sm text-yellow-700 mb-2">3. Apague TUDO → Cole este código → Commit changes</p>
+                        <p class="text-sm text-yellow-800 font-medium mb-2">📌 Sempre que alterar um produto:</p>
+                        <p class="text-sm text-yellow-700 mb-1">1. Copie TODO o código da caixa abaixo</p>
+                        <p class="text-sm text-yellow-700 mb-1">2. Vá no GitHub → edite o <code>index.html</code></p>
+                        <p class="text-sm text-yellow-700 mb-1">3. Apague tudo → Cole → Commit changes</p>
                     </div>
                     <textarea id="codigo-completo" class="w-full h-[400px] p-4 border rounded-lg text-sm font-mono bg-gray-50"></textarea>
                     <button id="copiar-codigo" class="mt-4 bg-secundario text-white px-6 py-2 rounded-lg hover:bg-secundario/90 transicao">
@@ -248,7 +226,6 @@
                     </button>
                     <span id="confirmacao-copia" class="ml-3 text-green-600 hidden">✓ Copiado!</span>
                 </section>
-                <!-- Aba: Aparência -->
                 <section class="conteudo-aba hidden" id="aba-aparencia">
                     <h2 class="text-xl font-semibold mb-6">Configurações do Site</h2>
                     <div class="bg-white rounded-lg p-6 sombra-suave mb-6 max-w-2xl">
@@ -311,10 +288,10 @@
         </div>
     </div>
     <script>
-        // Dados dos produtos — AQUI FICAM SALVOS PERMANENTEMENTE
+        // Dados
         const credenciais = { usuario: 'Rhode', senha: 'Island' };
         
-        // PRODUTOS PADRÃO — VOCÊ PODE EDITAR AQUI DIRETAMENTE TAMBÉM
+        // PRODUTOS PADRÃO
         let produtos = [
             { id: 1, nome: 'Molde Tigela Redonda', descricao: 'Molde de gesso para tigela, tamanho 15cm', categoria: 'moldes', imagem: 'https://via.placeholder.com/300x300?text=Molde+Tigela' },
             { id: 2, nome: 'Cortador Estrela', descricao: 'Cortador em formato de estrela', categoria: 'cortadores', imagem: 'https://via.placeholder.com/300x300?text=Cortador+Estrela' },
@@ -332,16 +309,12 @@
             fonte: "'Inter', sans-serif"
         };
         
-        // Carregar do localStorage se tiver (para edições em andamento)
+        // Carregar do localStorage
         const dadosSalvos = localStorage.getItem('moldae_produtos');
-        if (dadosSalvos) {
-            produtos = JSON.parse(dadosSalvos);
-        }
+        if (dadosSalvos) produtos = JSON.parse(dadosSalvos);
         
         const configSalvo = localStorage.getItem('moldae_config');
-        if (configSalvo) {
-            configSite = JSON.parse(configSalvo);
-        }
+        if (configSalvo) configSite = JSON.parse(configSalvo);
         
         let proximoId = produtos.length ? Math.max(...produtos.map(p => p.id)) + 1 : 1;
         
@@ -393,6 +366,16 @@
                 document.getElementById(`cat-${cat}`).classList.add('ativa');
             });
         });
+        
+        // ========== APLICAR CONFIGURAÇÕES ==========
+        function aplicarConfig() {
+            document.getElementById('logo-site').src = configSite.logoUrl;
+            document.getElementById('logo-site').style.height = `${configSite.logoTamanho}px`;
+            // ✅ CORRIGIDO: Define os textos diretamente
+            document.getElementById('titulo-banner').textContent = configSite.bannerTitulo;
+            document.getElementById('subtitulo-banner').textContent = configSite.bannerSubtitulo;
+            document.body.style.fontFamily = configSite.fonte;
+        }
         
         // ========== RENDERIZAR CATÁLOGO ==========
         function renderizarCatalogo() {
@@ -542,17 +525,59 @@
                 document.querySelectorAll('.conteudo-aba').forEach(c => c.classList.add('hidden'));
                 document.getElementById(`aba-${aba}`).classList.remove('hidden');
                 
-                if (aba === 'backup') {
-                    gerarCodigoCompleto();
-                }
+                if (aba === 'backup') gerarCodigoCompleto();
+                if (aba === 'aparencia') carregarConfigInterface();
             });
         });
         
-        // ========== GERA CÓDIGO ATUALIZADO ==========
+        // ========== CARREGAR CONFIG NA INTERFACE ==========
+        function carregarConfigInterface() {
+            document.getElementById('config-logo-url').value = configSite.logoUrl;
+            document.getElementById('config-logo-tamanho').value = configSite.logoTamanho;
+            document.getElementById('valor-tamanho-logo').textContent = configSite.logoTamanho;
+            document.getElementById('config-banner-titulo').value = configSite.bannerTitulo;
+            document.getElementById('config-banner-subtitulo').value = configSite.bannerSubtitulo;
+            document.getElementById('cor-principal').value = configSite.corPrincipal;
+            document.getElementById('cor-secundaria').value = configSite.corSecundaria;
+            document.getElementById('fonte-principal').value = configSite.fonte;
+            aplicarConfig();
+        }
+        
+        // Visualização em tempo real do tamanho da logo
+        document.getElementById('config-logo-tamanho').addEventListener('input', function() {
+            document.getElementById('valor-tamanho-logo').textContent = this.value;
+            document.getElementById('logo-site').style.height = `${this.value}px`;
+        });
+        
+        // Salvar aparência
+        document.getElementById('salvar-aparencia').addEventListener('click', () => {
+            configSite = {
+                logoUrl: document.getElementById('config-logo-url').value,
+                logoTamanho: parseInt(document.getElementById('config-logo-tamanho').value),
+                bannerTitulo: document.getElementById('config-banner-titulo').value,
+                bannerSubtitulo: document.getElementById('config-banner-subtitulo').value,
+                corPrincipal: document.getElementById('cor-principal').value,
+                corSecundaria: document.getElementById('cor-secundaria').value,
+                fonte: document.getElementById('fonte-principal').value
+            };
+            localStorage.setItem('moldae_config', JSON.stringify(configSite));
+            aplicarConfig();
+            gerarCodigoCompleto();
+            alert('Configurações salvas!');
+        });
+        
+        // ========== SALVAR NO LOCALSTORAGE ==========
+        function salvarDados() {
+            localStorage.setItem('moldae_produtos', JSON.stringify(produtos));
+        }
+        
+        // ========== GERAR CÓDIGO COMPLETO ==========
         function gerarCodigoCompleto() {
-            const produtosJson = JSON.stringify(produtos, null, 4);
+            const produtosCodigo = produtos.map(p => 
+`            { id: ${p.id}, nome: '${p.nome.replace(/'/g, "\\'")}', descricao: '${(p.descricao||'').replace(/'/g, "\\'")}', categoria: '${p.categoria}', imagem: '${p.imagem}' }`
+            ).join(',\n');
             
-            const codigoBase = `<!DOCTYPE html>
+            const codigoGerado = `<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -586,7 +611,7 @@
     </style>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        * { font-family: 'Inter', sans-serif; }
+        * { font-family: ${configSite.fonte}; }
         .categoria-conteudo { display: none; }
         .categoria-conteudo.ativa { display: block; }
         .modal { transition: opacity 0.3s ease, visibility 0.3s ease; }
@@ -598,7 +623,7 @@
         <header class="bg-white sombra-suave sticky top-0 z-50">
             <div class="container mx-auto px-4 py-4 flex justify-between items-center">
                 <div id="logo-container" class="flex items-center">
-                    <img id="logo-site" src="${configSite.logoUrl}" alt="Logo Moldae Cerâmica" class="h-16 object-contain">
+                    <img id="logo-site" src="${configSite.logoUrl}" alt="Logo Moldae Cerâmica" class="h-16 object-contain" style="height: ${configSite.logoTamanho}px;">
                 </div>
                 <nav class="hidden md:flex gap-8 font-medium">
                     <button class="categoria-botao ativa text-secundario border-b-2 border-secundario pb-1" data-categoria="todos">Início</button>
@@ -751,20 +776,4 @@
                             <input type="url" id="produto-imagem" class="w-full px-4 py-2 border rounded-lg">
                         </div>
                         <div class="flex gap-3">
-                            <button type="submit" class="bg-secundario text-white px-6 py-2 rounded-lg hover:bg-secundario/90 transicao">Salvar Produto</button>
-                            <button type="reset" id="botao-cancelar" class="bg-gray-200 px-6 py-2 rounded-lg hover:bg-gray-300 transicao">Cancelar</button>
-                        </div>
-                    </form>
-                </section>
-                <section class="conteudo-aba hidden" id="aba-backup">
-                    <h2 class="text-xl font-semibold mb-6">Código Completo — Copie e Salve</h2>
-                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
-                        <p class="text-sm text-yellow-800 font-medium mb-2">📌 Sempre que alterar um produto:</p>
-                        <p class="text-sm text-yellow-700 mb-1">1. Copie TODO o código da caixa abaixo</p>
-                        <p class="text-sm text-yellow-700 mb-1">2. Vá no GitHub → edite o <code>index.html</code></p>
-                        <p class="text-sm text-yellow-700 mb-1">3. Apague tudo → Cole → Commit changes</p>
-                    </div>
-                    <textarea id="codigo-completo" class="w-full h-[400px] p-4 border rounded-lg text-sm font-mono bg-gray-50"></textarea>
-                    <button id="copiar-codigo" class="mt-4 bg-secundario text-white px-6 py-2 rounded-lg hover:bg-secundario/90 transicao">
-                        <i class="fa fa-copy mr-1"></i> Copiar Código
-                    </button>
+                            <button type="submit" class
