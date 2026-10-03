@@ -38,8 +38,6 @@
         .border-secundario { border-color: var(--cor-secundario); }
         .menu-celular { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
         .menu-celular.aberto { max-height: 300px; }
-        .tamanho-option { transition: all 0.2s ease; }
-        .tamanho-option:hover { background-color: rgba(212, 165, 116, 0.15); }
     </style>
 </head>
 <body class="bg-fundo text-texto">
@@ -135,8 +133,8 @@ const DADOS_SITE = {
         },
         {
             id: 12,
-            nome: '21 peças de Molde de Tigela de Cerâmica — MEGAPACK',
-            descricao: 'Combo completo com 21 moldes de tigelas. Escolha abaixo o tamanho desejado.',
+            nome: 'Molde de Tigela de Cerâmica — Escolha o Tamanho',
+            descricao: 'Moldes de tigela disponíveis em 21 tamanhos diferentes.\nEscolha abaixo o tamanho desejado.',
             categoria: 'conjuntos',
             imagem: 'https://makerworld.bblmw.com/makerworld/model/USaa8a6ba5a4f614/design/e0dc9b60a9ee596e.jpg?x-oss-process=image/resize,w_1000/format,webp',
             temTamanhos: true,
@@ -153,7 +151,16 @@ const DADOS_SITE = {
                 { codigo: 'T10', nome: 'Tigela 10 — 40×150mm' },
                 { codigo: 'T11', nome: 'Tigela 11 — 40×140mm' },
                 { codigo: 'T12', nome: 'Tigela 12 — 40×130mm' },
-                { codigo: 'TODOS', nome: 'Kit Completo — 21 peças' }
+                { codigo: 'T13', nome: 'Tigela 13 — 40×120mm' },
+                { codigo: 'T14', nome: 'Tigela 14 — 30×150mm' },
+                { codigo: 'T15', nome: 'Tigela 15 — 30×160mm' },
+                { codigo: 'T16', nome: 'Tigela 16 — 30×130mm' },
+                { codigo: 'T17', nome: 'Tigela 17 — 30×140mm' },
+                { codigo: 'T18', nome: 'Tigela 18 — 30×170mm' },
+                { codigo: 'T19', nome: 'Tigela 19 — 30×180mm' },
+                { codigo: 'T20', nome: 'Tigela 20 — 40×180mm' },
+                { codigo: 'T21', nome: 'Tigela 21 — 50×170mm' },
+                { codigo: 'KIT', nome: 'Kit Completo — os 21 tamanhos' }
             ]
         }
     ],
@@ -225,7 +232,6 @@ const DADOS_SITE = {
     <script>
 let dados = DADOS_SITE;
 
-// Menu celular
 const btnMenuCelular = document.getElementById('btn-menu-celular');
 const menuCelular = document.getElementById('menu-celular');
 btnMenuCelular.onclick = () => {
@@ -253,10 +259,6 @@ function gerarCardProduto(p) {
         </div>`;
     }
 
-    const linkPedido = temTamanhos 
-        ? `https://instagram.com/moldae_ceramica?msg=Olá! Quero pedir: ${encodeURIComponent(p.nome)} — Tamanho: ${temTamanhos ? 'TROCAR_TAMANHO' : ''}`
-        : `https://instagram.com/moldae_ceramica?msg=Olá! Quero pedir: ${encodeURIComponent(p.nome)}`;
-
     return `
     <div class="bg-white rounded-xl overflow-hidden shadow cartao-produto">
         <img src="${p.imagem}" alt="${p.nome}" class="w-full h-64 object-cover">
@@ -264,7 +266,7 @@ function gerarCardProduto(p) {
             <h3 class="font-semibold text-lg mb-2">${p.nome}</h3>
             <p class="text-gray-600 text-sm mb-4 whitespace-pre-line">${p.descricao}</p>
             ${htmlTamanhos}
-            <a href="${linkPedido}" target="_blank" 
+            <a href="https://instagram.com/moldae_ceramica" target="_blank" 
                class="block w-full text-center bg-[#E4405F] text-white py-2 rounded-lg hover:bg-opacity-90 link-pedir"
                data-produto="${p.id}">
                 <i class="fa fa-instagram"></i> Pedir no Instagram
@@ -293,7 +295,6 @@ function renderizar() {
         if (!el.innerHTML) el.innerHTML = '<p class="col-span-full text-center text-gray-400 py-8">Nenhum produto nesta categoria ainda.</p>';
     });
 
-    // Vincular eventos dos selects de tamanho
     document.querySelectorAll('.tamanho-select').forEach(select => {
         select.onchange = function() {
             const prodId = this.dataset.produto;
