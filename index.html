@@ -37,7 +37,7 @@
         .text-secundario { color: var(--cor-secundario); }
         .border-secundario { border-color: var(--cor-secundario); }
         .menu-celular { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-        .menu-celular.aberto { max-height: 400px; }
+        .menu-celular.aberto { max-height: 450px; }
     </style>
 </head>
 <body class="bg-fundo text-texto">
@@ -59,35 +59,35 @@ const DADOS_SITE = {
             nome: 'Molde Manteigueira Francesa',
             descricao: 'Kit Molde para Manteigueira francesa. Acompanha: 2 peças: 1x Molde 1x Cortador',
             categoria: 'moldes',
-            imagem: 'https://i.imgur.com/fhZoQa2.png'
+            imagem: 'https://scontent-gru1-1.xx.fbcdn.net/v/t39.30808-6/825292619_10235672214690707_1594651004314722073_n.jpg?stp=dst-jpg_tt6&cstp=mx768x972&ctp=s768x972'
         },
         {
             id: 2,
             nome: 'Suporte para amostras de esmalte (Redondo)',
             descricao: 'Suporte para amostras de esmalte. (personalizável) Para disquinhos de até 55mm',
             categoria: 'ferramentas',
-            imagem: 'https://i.imgur.com/3DgxdIN.jpeg'
+            imagem: 'https://scontent-gru2-2.xx.fbcdn.net/v/t39.30808-6/825353316_10235660281072374_1576819588531748826_n.jpg?stp=dst-jpg_tt6&cstp=mx1024x765&ctp=s1024x765'
         },
         {
             id: 3,
-            nome: 'Suporte para amostras de esmalte (cartão)',
+            nome: 'Suporte para amostras de esmalte',
             descricao: 'Suporte para amostras de esmalte. (Formato cartão) Personalizável com sua logo/nome',
             categoria: 'ferramentas',
-            imagem: 'https://i.imgur.com/ZapJj9D.jpeg'
+            imagem: 'https://scontent-gru2-2.xx.fbcdn.net/v/t39.30808-6/825859712_10235660551999147_4705664171741068315_n.jpg?stp=dst-jpg_tt6&cstp=mx1024x765&ctp=s1024x765'
         },
         {
             id: 4,
             nome: 'Molde Bowl Banana ** Exclusivo',
             descricao: 'Bowl Banana.\nModelo exclusivo Moldaê\nTamanho: 20cm',
             categoria: 'moldes',
-            imagem: 'https://i.imgur.com/GkDJ3dg.jpeg'
+            imagem: 'https://scontent-gru1-2.xx.fbcdn.net/v/t39.30808-6/825340300_10235624097327803_6440314713724064118_n.jpg?stp=dst-jpg_tt6&cstp=mx768x1024&ctp=s768x1024'
         },
         {
             id: 5,
             nome: 'Kit Moldes Para Conjunto Café/Lanche',
             descricao: 'Kit de moldes para montar conjunto. Acompanha: 3 moldes.',
             categoria: 'conjuntos',
-            imagem: 'https://i.imgur.com/RpzEZ7i.jpeg'
+            imagem: 'https://scontent-gru1-2.xx.fbcdn.net/v/t39.30808-6/817846324_10235622387685063_401069051551442139_n.jpg?stp=dst-jpg_tt6&cstp=mx768x1024&ctp=s768x1024'
         },
         {
             id: 6,
@@ -114,8 +114,8 @@ const DADOS_SITE = {
             id: 9,
             nome: 'Cortador para Brinco de Cerâmica',
             descricao: 'Cortador para Brincos. Acompanha 2 peças.',
-            categoria: 'joias',
-            imagem: 'https://i.imgur.com/0gkM4xB.jpeg'
+            categoria: 'cortadores',
+            imagem: 'https://scontent-gru2-1.xx.fbcdn.net/v/t39.30808-6/829797686_10235695571554614_8010631770598960752_n.jpg?stp=dst-jpg_tt6&cstp=mx1195x896&ctp=s1195x896'
         },
         {
             id: 10,
@@ -162,9 +162,51 @@ const DADOS_SITE = {
                 { codigo: 'T21', nome: 'Tigela 21 — 50×170mm' },
                 { codigo: 'KIT', nome: 'Kit Completo — os 21 tamanhos' }
             ]
+        },
+        {
+            id: 13,
+            nome: 'Conjunto cortador de argila para brincos',
+            descricao: 'Cortador de Brincos',
+            categoria: 'joias',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/USc743e30a2fb2c4/design/91bec75e7e368a84.png?x-oss-process=image/resize,w_1000/format,webp'
+        },
+        {
+            id: 14,
+            nome: 'Molde para Brincos de Argila',
+            descricao: 'Molde para Brincos de Argila Polimérica – Ferramenta Personalizada para Criação de Joias (22,53 x 36,25 x 13 mm)',
+            categoria: 'joias',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/USadabe3ae0077bc/design/2025-02-03_d3842c460cec7.jpg?x-oss-process=image/resize,w_1000/format,webp'
+        },
+        {
+            id: 15,
+            nome: 'Conjunto cortador orgânico para brincos',
+            descricao: 'Conjunto cortador orgânico para brincos',
+            categoria: 'joias',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/US6f698dacc594f0/design/38ee434e975eff3d.png?x-oss-process=image/resize,w_1000/format,webp'
+        },
+        {
+            id: 16,
+            nome: 'Molde de Brincos',
+            descricao: 'Molde de Brincos de Massa Polimérica – Ferramenta para Fazer Joias Personalizadas (24.94 x 50.47 x 13 mm)',
+            categoria: 'joias',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/US856e08b3078526/design/2025-08-15_2cd39e1c7e9838.jpg?x-oss-process=image/resize,w_1000/format,webp'
+        },
+        {
+            id: 17,
+            nome: 'Molde de Brincos',
+            descricao: 'Molde para brincos – Ferramenta para fazer joias',
+            categoria: 'joias',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/USb14a7eb176110c/design/2026-01-18_475c60713b6bf8.jpeg?x-oss-process=image/resize,w_1000/format,webp'
+        },
+        {
+            id: 18,
+            nome: 'Molde para Brincos',
+            descricao: 'Molde para Brincos de Massa de Polímero – Ferramenta Personalizada para Confecção de Joias (24,28 x 29,66 x 12,50 mm)',
+            categoria: 'joias',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/US4900e1a1816ed0/design/2024-10-29_74ce239009669.jpeg?x-oss-process=image/resize,w_1000/format,webp'
         }
     ],
-    proximoId: 13
+    proximoId: 19
 };
 </script>
 
@@ -181,7 +223,6 @@ const DADOS_SITE = {
                     </div>
                 </div>
                 
-                <!-- Menu Desktop -->
                 <nav class="hidden md:flex gap-6 font-medium mt-4 justify-center flex-wrap">
                     <button class="cat-botao ativa text-secundario border-b-2 border-secundario pb-1" data-cat="todos">Início</button>
                     <button class="cat-botao hover:text-secundario" data-cat="ferramentas">Ferramentas</button>
@@ -192,7 +233,6 @@ const DADOS_SITE = {
                     <button class="cat-botao hover:text-secundario" data-cat="joias">Joias</button>
                 </nav>
                 
-                <!-- Menu Celular -->
                 <nav id="menu-celular" class="menu-celular md:hidden mt-3 border-t pt-3">
                     <div class="flex flex-col gap-2">
                         <button class="cat-botao ativa text-secundario py-2 border-b border-gray-100" data-cat="todos">Início</button>
