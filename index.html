@@ -1,89 +1,406 @@
-<html lang="pt-BR"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Moldae Cerâmica | Moldes e Cortadores</title> <script src="https://cdn.tailwindcss.com/"></script> <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet"> <script> tailwind.config = { theme: { extend: { colors: { primario: '#d4a574', secundario: '#8b5a2b', fundo: '#f9f6f0', texto: '#333333' } } } } </script> <style> @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'); :root { --cor-primario: #d4a574; --cor-secundario: #8b5a2b; --fonte: 'Inter', sans-serif; } * { font-family: var(--fonte); } .categoria-conteudo { display: none; } .categoria-conteudo.ativa { display: block; } .cartao-produto:hover { transform: translateY(-5px); transition: all 0.3s ease; } .bg-primario { background-color: var(--cor-primario); } .bg-primario-10 { background-color: rgba(212, 165, 116, 0.1); } .bg-secundario { background-color: var(--cor-secundario); } .text-secundario { color: var(--cor-secundario); } .border-secundario { border-color: var(--cor-secundario); } .menu-celular { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; } .menu-celular.aberto { max-height: 450px; } </style> </head> <body class="bg-fundo text-texto"> <script> const DADOS_SITE = { credenciais: { usuario: 'Rhode', senha: 'Island' }, config: { logoUrl: 'https://i.imgur.com/rNMwfDx.png', logoTamanho: 64, titulo: 'Moldae Cerâmica | Moldes e Cortadores', subtitulo: 'Produtos de qualidade para dar forma à sua arte', corPrimaria: '#d4a574', corSecundaria: '#8b5a2b' }, produtos: [ { id: 1, nome: 'Molde Manteigueira Francesa', descricao: 'Kit Molde para Manteigueira francesa. Acompanha: 2 peças: 1x Molde 1x Cortador', categoria: 'moldes', imagem: 'https://i.imgur.com/fhZoQa2.png' }, { id: 2, nome: 'Suporte para amostras de esmalte (Redondo)', descricao: 'Suporte para amostras de esmalte. (personalizável) Para disquinhos de até 55mm', categoria: 'ferramentas', imagem: 'https://i.imgur.com/3DgxdIN.jpeg' }, { id: 3, nome: 'Suporte para amostras de esmalte (Cartão)', descricao: 'Suporte para amostras de esmalte. (Formato cartão) Personalizável com sua logo/nome', categoria: 'ferramentas', imagem: 'https://i.imgur.com/ZapJj9D.jpeg' }, { id: 4, nome: 'Molde Bowl Banana ** Exclusivo', descricao: 'Bowl Banana.\nModelo exclusivo Moldaê\nTamanho: 20cm', categoria: 'moldes', imagem: 'https://i.imgur.com/GkDJ3dg.jpeg' }, { id: 5, nome: 'Kit Moldes Para Conjunto Café/Lanche', descricao: 'Kit de moldes para montar conjunto. Acompanha: 3 moldes.', categoria: 'conjuntos', imagem: 'https://i.imgur.com/RpzEZ7i.jpeg' }, { id: 6, nome: 'Molde Copo + Cortador de Placa', descricao: 'Molde Para Copo + Cortador para Placa de argila', categoria: 'moldes', imagem: 'https://makerworld.bblmw.com/makerworld/model/US1ed3a051e375c9/design/d849cc72d1970068.jpeg?x-oss-process=image/resize,w_1000/format,webp' }, { id: 7, nome: 'Molde Para Travessa Rasa', descricao: 'Molde para travessa rasa', categoria: 'moldes', imagem: 'https://makerworld.bblmw.com/makerworld/model/USa1febb7d889c32/design/2026-01-06_7b99caa698c4c8.jpeg?x-oss-process=image/resize,w_1000/format,webp' }, { id: 8, nome: 'Molde e Cortador Formato Coração', descricao: 'Molde para prato em formato de coração. Acompanha cortador', categoria: 'moldes', imagem: 'https://makerworld.bblmw.com/makerworld/model/DSM00000002278521/design/2026-01-21_te83syfj0t3r4_img_4344.jpg?x-oss-process=image/resize,w_1000/format,webp' }, { id: 9, nome: 'Cortador para Brinco de Cerâmica', descricao: 'Cortador para Brincos. Acompanha 2 peças.', categoria: 'cortadores', imagem: 'https://i.imgur.com/0gkM4xB.jpeg' }, { id: 10, nome: 'Kit Anel Pé para Copos, Xícaras e Canecas', descricao: 'Conjunto composto por 3 peças em 2 tipos diferentes de pezinhos.', categoria: 'moldes', imagem: 'https://makerworld.bblmw.com/makerworld/model/USef6f6f8e79fe33/design/e6ad76864932dba7.jpg?x-oss-process=image/resize,w_1000/format,webp' }, { id: 11, nome: 'Kit 6 Moldes para Alças de Canecas e Xícaras', descricao: '6 Moldes Plásticos para Alça de Caneca de Cerâmica', categoria: 'moldes', imagem: 'https://makerworld.bblmw.com/makerworld/model/USf64dd21ac1975/design/4e8936551aac8032.jpg?x-oss-process=image/resize,w_1000/format,webp' }, { id: 12, nome: 'Molde de Tigela de Cerâmica — Escolha o Tamanho', descricao: 'Moldes de tigela disponíveis em 21 tamanhos diferentes.\nEscolha abaixo o tamanho desejado.', categoria: 'conjuntos', imagem: 'https://makerworld.bblmw.com/makerworld/model/USaa8a6ba5a4f614/design/e0dc9b60a9ee596e.jpg?x-oss-process=image/resize,w_1000/format,webp', temTamanhos: true, tamanhos: [ { codigo: 'T1', nome: 'Tigela 1 — 30×120mm' }, { codigo: 'T2', nome: 'Tigela 2 — 50×170mm' }, { codigo: 'T3', nome: 'Tigela 3 — 50×160mm' }, { codigo: 'T4', nome: 'Tigela 4 — 50×150mm' }, { codigo: 'T5', nome: 'Tigela 5 — 50×140mm' }, { codigo: 'T6', nome: 'Tigela 6 — 50×130mm' }, { codigo: 'T7', nome: 'Tigela 7 — 50×120mm' }, { codigo: 'T8', nome: 'Tigela 8 — 40×170mm' }, { codigo: 'T9', nome: 'Tigela 9 — 40×160mm' }, { codigo: 'T10', nome: 'Tigela 10 — 40×150mm' }, { codigo: 'T11', nome: 'Tigela 11 — 40×140mm' }, { codigo: 'T12', nome: 'Tigela 12 — 40×130mm' }, { codigo: 'T13', nome: 'Tigela 13 — 40×120mm' }, { codigo: 'T14', nome: 'Tigela 14 — 30×150mm' }, { codigo: 'T15', nome: 'Tigela 15 — 30×160mm' }, { codigo: 'T16', nome: 'Tigela 16 — 30×130mm' }, { codigo: 'T17', nome: 'Tigela 17 — 30×140mm' }, { codigo: 'T18', nome: 'Tigela 18 — 30×170mm' }, { codigo: 'T19', nome: 'Tigela 19 — 30×180mm' }, { codigo: 'T20', nome: 'Tigela 20 — 40×180mm' }, { codigo: 'T21', nome: 'Tigela 21 — 50×170mm' }, { codigo: 'KIT', nome: 'Kit Completo — os 21 tamanhos' } ] }, { id: 13, nome: 'Conjunto cortador de argila para brincos', descricao: 'Cortador de Brincos', categoria: 'joias', imagem: 'https://makerworld.bblmw.com/makerworld/model/USc743e30a2fb2c4/design/91bec75e7e368a84.png?x-oss-process=image/resize,w_1000/format,webp' }, { id: 14, nome: 'Molde para Brincos de Argila', descricao: 'Molde para Brincos de Argila Polimérica – Ferramenta Personalizada para Criação de Joias (22,53 x 36,25 x 13 mm)', categoria: 'joias', imagem: 'https://makerworld.bblmw.com/makerworld/model/USadabe3ae0077bc/design/2025-02-03_d3842c460cec7.jpg?x-oss-process=image/resize,w_1000/format,webp' }, { id: 15, nome: 'Conjunto cortador orgânico para brincos', descricao: 'Conjunto cortador orgânico para brincos', categoria: 'joias', imagem: 'https://makerworld.bblmw.com/makerworld/model/US6f698dacc594f0/design/38ee434e975eff3d.png?x-oss-process=image/resize,w_1000/format,webp' }, { id: 16, nome: 'Molde de Brincos', descricao: 'Molde de Brincos de Massa Polimérica – Ferramenta para Fazer Joias Personalizadas (24.94 x 50.47 x 13 mm)', categoria: 'joias', imagem: 'https://makerworld.bblmw.com/makerworld/model/US856e08b3078526/design/2025-08-15_2cd39e1c7e9838.jpg?x-oss-process=image/resize,w_1000/format,webp' }, { id: 17, nome: 'Molde de Brincos', descricao: 'Molde para brincos – Ferramenta para fazer joias', categoria: 'joias', imagem: 'https://makerworld.bblmw.com/makerworld/model/USb14a7eb176110c/design/2026-01-18_475c60713b6bf8.jpeg?x-oss-process=image/resize,w_1000/format,webp' }, { id: 18, nome: 'Molde para Brincos', descricao: 'Molde para Brincos de Massa de Polímero – Ferramenta Personalizada para Confecção de Joias (24,28 x 29,66 x 12,50 mm)', categoria: 'joias', imagem: 'https://makerworld.bblmw.com/makerworld/model/US4900e1a1816ed0/design/2024-10-29_74ce239009669.jpeg?x-oss-process=image/resize,w_1000/format,webp' } ], proximoId: 19 }; </script> <div id="area-publica"> <header class="bg-white shadow-md sticky top-0 z-50"> <div class="container mx-auto px-4 py-4"> <div class="flex justify-between items-center"> <img id="logo-site" src="https://i.imgur.com/rNMwfDx.png" alt="Logo Moldae Cerâmica" class="h-16 object-contain"> <div class="flex items-center gap-3"> <button id="btn-menu-celular" class="md:hidden text-2xl text-gray-600 hover:text-secundario"> <i class="fa fa-bars"></i> </button> <button id="btn-login" class="text-gray-600 hover:text-secundario text-xl"><i class="fa fa-cog"></i></button> </div> </div> <nav class="hidden md:flex gap-6 font-medium mt-4 justify-center flex-wrap"> <button class="cat-botao ativa text-secundario border-b-2 border-secundario pb-1" data-cat="todos">Início</button> <button class="cat-botao hover:text-secundario" data-cat="ferramentas">Ferramentas</button> <button class="cat-botao hover:text-secundario" data-cat="moldes">Moldes</button> <button class="cat-botao hover:text-secundario" data-cat="cortadores">Cortadores</button> <button class="cat-botao hover:text-secundario" data-cat="conjuntos">Conjuntos</button> <button class="cat-botao hover:text-secundario" data-cat="natal">Natal</button> <button class="cat-botao hover:text-secundario" data-cat="joias">Joias</button> </nav> <nav id="menu-celular" class="menu-celular md:hidden mt-3 border-t pt-3"> <div class="flex flex-col gap-2"> <button class="cat-botao ativa text-secundario py-2 border-b border-gray-100" data-cat="todos">Início</button> <button class="cat-botao py-2 text-gray-700" data-cat="ferramentas">Ferramentas</button> <button class="cat-botao py-2 text-gray-700" data-cat="moldes">Moldes</button> <button class="cat-botao py-2 text-gray-700" data-cat="cortadores">Cortadores</button> <button class="cat-botao py-2 text-gray-700" data-cat="conjuntos">Conjuntos</button> <button class="cat-botao py-2 text-gray-700" data-cat="natal">Natal</button> <button class="cat-botao py-2 text-gray-700" data-cat="joias">Joias</button> </div> </nav> </div> </header> <section class="bg-primario-10 py-16 mb-8"> <div class="container mx-auto px-4 text-center"> <h1 id="banner-titulo" class="text-3xl font-bold text-secundario mb-4">Moldes e Cortadores para Cerâmica</h1> <p id="banner-subtitulo" class="text-lg mb-8 max-w-2xl mx-auto">Produtos de qualidade para dar forma à sua arte</p> <a href="https://instagram.com/moldae_ceramica" target="_blank" class="inline-flex items-center gap-2 bg-[#E4405F] text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90"> <i class="fa fa-instagram"></i> Peça pelo Instagram @moldae_ceramica </a> </div> </section> <main class="container mx-auto px-4 pb-16"> <div class="categoria-conteudo ativa" id="cat-todos"><h2 class="text-2xl font-semibold mb-6">Todos os Produtos</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="grade-todos"></div></div> <div class="categoria-conteudo" id="cat-ferramentas"><h2 class="text-2xl font-semibold mb-6">Ferramentas</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="grade-ferramentas"></div></div> <div class="categoria-conteudo" id="cat-moldes"><h2 class="text-2xl font-semibold mb-6">Moldes</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="grade-moldes"></div></div> <div class="categoria-conteudo" id="cat-cortadores"><h2 class="text-2xl font-semibold mb-6">Cortadores</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="grade-cortadores"></div></div> <div class="categoria-conteudo" id="cat-conjuntos"><h2 class="text-2xl font-semibold mb-6">Conjuntos</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="grade-conjuntos"></div></div> <div class="categoria-conteudo" id="cat-natal"><h2 class="text-2xl font-semibold mb-6">Natal</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="grade-natal"></div></div> <div class="categoria-conteudo" id="cat-joias"><h2 class="text-2xl font-semibold mb-6">Joias</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="grade-joias"></div></div> </main> <footer class="bg-secundario text-white py-10"> <div class="container mx-auto px-4 text-center"> <a href="https://instagram.com/moldae_ceramica" target="_blank" class="inline-flex items-center gap-2 text-xl hover:opacity-90"> <i class="fa fa-instagram"></i> @moldae_ceramica </a> <p class="mt-6 text-sm opacity-70">© 2026 Moldae Cerâmica</p> </div> </footer> </div> <script>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moldae Cerâmica | Moldes e Cortadores</title>
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primario: '#d4a574',
+                        secundario: '#8b5a2b',
+                        fundo: '#f9f6f0',
+                        texto: '#333333'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        :root {
+            --cor-primario: #d4a574;
+            --cor-secundario: #8b5a2b;
+            --fonte: 'Inter', sans-serif;
+        }
+        * { font-family: var(--fonte); }
+        .categoria-conteudo { display: none; }
+        .categoria-conteudo.ativa { display: block; }
+        .cartao-produto:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+        .bg-primario { background-color: var(--cor-primario); }
+        .bg-primario-10 { background-color: rgba(212, 165, 116, 0.1); }
+        .bg-secundario { background-color: var(--cor-secundario); }
+        .text-secundario { color: var(--cor-secundario); }
+        .border-secundario { border-color: var(--cor-secundario); }
+        .menu-celular { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .menu-celular.aberto { max-height: 450px; }
+    </style>
+</head>
+<body class="bg-fundo text-texto">
+
+<script>
+const DADOS_SITE = {
+    credenciais: { usuario: 'Rhode', senha: 'Island' },
+    config: {
+        logoUrl: 'https://i.imgur.com/rNMwfDx.png',
+        logoTamanho: 64,
+        titulo: 'Moldae Cerâmica | Moldes e Cortadores',
+        subtitulo: 'Produtos de qualidade para dar forma à sua arte',
+        corPrimaria: '#d4a574',
+        corSecundaria: '#8b5a2b'
+    },
+    produtos: [
+        {
+            id: 1,
+            nome: 'Molde Manteigueira Francesa',
+            descricao: 'Kit Molde para Manteigueira francesa. Acompanha: 2 peças: 1x Molde 1x Cortador',
+            categoria: 'moldes',
+            imagem: 'https://scontent-gru1-1.xx.fbcdn.net/v/t39.30808-6/825292619_10235672214690707_1594651004314722073_n.jpg?stp=dst-jpg_tt6&cstp=mx768x972&ctp=s768x972'
+        },
+        {
+            id: 2,
+            nome: 'Suporte para amostras de esmalte (Redondo)',
+            descricao: 'Suporte para amostras de esmalte. (personalizável) Para disquinhos de até 55mm',
+            categoria: 'ferramentas',
+            imagem: 'https://scontent-gru2-2.xx.fbcdn.net/v/t39.30808-6/825353316_10235660281072374_1576819588531748826_n.jpg?stp=dst-jpg_tt6&cstp=mx1024x765&ctp=s1024x765'
+        },
+        {
+            id: 3,
+            nome: 'Suporte para amostras de esmalte',
+            descricao: 'Suporte para amostras de esmalte. (Formato cartão) Personalizável com sua logo/nome',
+            categoria: 'ferramentas',
+            imagem: 'https://scontent-gru2-2.xx.fbcdn.net/v/t39.30808-6/825859712_10235660551999147_4705664171741068315_n.jpg?stp=dst-jpg_tt6&cstp=mx1024x765&ctp=s1024x765'
+        },
+        {
+            id: 4,
+            nome: 'Molde Bowl Banana ** Exclusivo',
+            descricao: 'Bowl Banana.\nModelo exclusivo Moldaê\nTamanho: 20cm',
+            categoria: 'moldes',
+            imagem: 'https://scontent-gru1-2.xx.fbcdn.net/v/t39.30808-6/825340300_10235624097327803_6440314713724064118_n.jpg?stp=dst-jpg_tt6&cstp=mx768x1024&ctp=s768x1024'
+        },
+        {
+            id: 5,
+            nome: 'Kit Moldes Para Conjunto Café/Lanche',
+            descricao: 'Kit de moldes para montar conjunto. Acompanha: 3 moldes.',
+            categoria: 'conjuntos',
+            imagem: 'https://scontent-gru1-2.xx.fbcdn.net/v/t39.30808-6/817846324_10235622387685063_401069051551442139_n.jpg?stp=dst-jpg_tt6&cstp=mx768x1024&ctp=s768x1024'
+        },
+        {
+            id: 6,
+            nome: 'Molde Copo + Cortador de Placa',
+            descricao: 'Molde Para Copo + Cortador para Placa de argila',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/US1ed3a051e375c9/design/d849cc72d1970068.jpeg?x-oss-process=image/resize,w_1000/format,webp'
+        },
+        {
+            id: 7,
+            nome: 'Molde Para Travessa Rasa',
+            descricao: 'Molde para travessa rasa',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/USa1febb7d889c32/design/2026-01-06_7b99caa698c4c8.jpeg?x-oss-process=image/resize,w_1000/format,webp'
+        },
+        {
+            id: 8,
+            nome: 'Molde e Cortador Formato Coração',
+            descricao: 'Molde para prato em formato de coração. Acompanha cortador',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/DSM00000002278521/design/2026-01-21_te83syfj0t3r4_img_4344.jpg?x-oss-process=image/resize,w_1000/format,webp'
+        },
+        {
+            id: 9,
+            nome: 'Cortador para Brinco de Cerâmica',
+            descricao: 'Cortador para Brincos. Acompanha 2 peças.',
+            categoria: 'cortadores',
+            imagem: 'https://scontent-gru2-1.xx.fbcdn.net/v/t39.30808-6/829797686_10235695571554614_8010631770598960752_n.jpg?stp=dst-jpg_tt6&cstp=mx1195x896&ctp=s1195x896'
+        },
+        {
+            id: 10,
+            nome: 'Kit Anel Pé para Copos, Xícaras e Canecas',
+            descricao: 'Conjunto composto por 3 peças em 2 tipos diferentes de pezinhos.',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/USef6f6f8e79fe33/design/e6ad76864932dba7.jpg?x-oss-process=image/resize,w_1000/format,webp'
+        },
+        {
+            id: 11,
+            nome: 'Kit 6 Moldes para Alças de Canecas e Xícaras',
+            descricao: '6 Moldes Plásticos para Alça de Caneca de Cerâmica',
+            categoria: 'moldes',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/USf64dd21ac1975/design/4e8936551aac8032.jpg?x-oss-process=image/resize,w_1000/format,webp'
+        },
+        {
+            id: 12,
+            nome: 'Molde de Tigela de Cerâmica — Escolha o Tamanho',
+            descricao: 'Moldes de tigela disponíveis em 21 tamanhos diferentes.\nEscolha abaixo o tamanho desejado.',
+            categoria: 'conjuntos',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/USaa8a6ba5a4f614/design/e0dc9b60a9ee596e.jpg?x-oss-process=image/resize,w_1000/format,webp',
+            temTamanhos: true,
+            tamanhos: [
+                { codigo: 'T1', nome: 'Tigela 1 — 30×120mm' },
+                { codigo: 'T2', nome: 'Tigela 2 — 50×170mm' },
+                { codigo: 'T3', nome: 'Tigela 3 — 50×160mm' },
+                { codigo: 'T4', nome: 'Tigela 4 — 50×150mm' },
+                { codigo: 'T5', nome: 'Tigela 5 — 50×140mm' },
+                { codigo: 'T6', nome: 'Tigela 6 — 50×130mm' },
+                { codigo: 'T7', nome: 'Tigela 7 — 50×120mm' },
+                { codigo: 'T8', nome: 'Tigela 8 — 40×170mm' },
+                { codigo: 'T9', nome: 'Tigela 9 — 40×160mm' },
+                { codigo: 'T10', nome: 'Tigela 10 — 40×150mm' },
+                { codigo: 'T11', nome: 'Tigela 11 — 40×140mm' },
+                { codigo: 'T12', nome: 'Tigela 12 — 40×130mm' },
+                { codigo: 'T13', nome: 'Tigela 13 — 40×120mm' },
+                { codigo: 'T14', nome: 'Tigela 14 — 30×150mm' },
+                { codigo: 'T15', nome: 'Tigela 15 — 30×160mm' },
+                { codigo: 'T16', nome: 'Tigela 16 — 30×130mm' },
+                { codigo: 'T17', nome: 'Tigela 17 — 30×140mm' },
+                { codigo: 'T18', nome: 'Tigela 18 — 30×170mm' },
+                { codigo: 'T19', nome: 'Tigela 19 — 30×180mm' },
+                { codigo: 'T20', nome: 'Tigela 20 — 40×180mm' },
+                { codigo: 'T21', nome: 'Tigela 21 — 50×170mm' },
+                { codigo: 'KIT', nome: 'Kit Completo — os 21 tamanhos' }
+            ]
+        },
+        {
+            id: 13,
+            nome: 'Conjunto cortador de argila para brincos',
+            descricao: 'Cortador de Brincos',
+            categoria: 'joias',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/USc743e30a2fb2c4/design/91bec75e7e368a84.png?x-oss-process=image/resize,w_1000/format,webp'
+        },
+        {
+            id: 14,
+            nome: 'Molde para Brincos de Argila',
+            descricao: 'Molde para Brincos de Argila Polimérica – Ferramenta Personalizada para Criação de Joias (22,53 x 36,25 x 13 mm)',
+            categoria: 'joias',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/USadabe3ae0077bc/design/2025-02-03_d3842c460cec7.jpg?x-oss-process=image/resize,w_1000/format,webp'
+        },
+        {
+            id: 15,
+            nome: 'Conjunto cortador orgânico para brincos',
+            descricao: 'Conjunto cortador orgânico para brincos',
+            categoria: 'joias',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/US6f698dacc594f0/design/38ee434e975eff3d.png?x-oss-process=image/resize,w_1000/format,webp'
+        },
+        {
+            id: 16,
+            nome: 'Molde de Brincos',
+            descricao: 'Molde de Brincos de Massa Polimérica – Ferramenta para Fazer Joias Personalizadas (24.94 x 50.47 x 13 mm)',
+            categoria: 'joias',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/US856e08b3078526/design/2025-08-15_2cd39e1c7e9838.jpg?x-oss-process=image/resize,w_1000/format,webp'
+        },
+        {
+            id: 17,
+            nome: 'Molde de Brincos',
+            descricao: 'Molde para brincos – Ferramenta para fazer joias',
+            categoria: 'joias',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/USb14a7eb176110c/design/2026-01-18_475c60713b6bf8.jpeg?x-oss-process=image/resize,w_1000/format,webp'
+        },
+        {
+            id: 18,
+            nome: 'Molde para Brincos',
+            descricao: 'Molde para Brincos de Massa de Polímero – Ferramenta Personalizada para Confecção de Joias (24,28 x 29,66 x 12,50 mm)',
+            categoria: 'joias',
+            imagem: 'https://makerworld.bblmw.com/makerworld/model/US4900e1a1816ed0/design/2024-10-29_74ce239009669.jpeg?x-oss-process=image/resize,w_1000/format,webp'
+        }
+    ],
+    proximoId: 19
+};
+</script>
+
+    <div id="area-publica">
+        <header class="bg-white shadow-md sticky top-0 z-50">
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex justify-between items-center">
+                    <img id="logo-site" src="https://i.imgur.com/rNMwfDx.png" alt="Logo Moldae Cerâmica" class="h-16 object-contain">
+                    <div class="flex items-center gap-3">
+                        <button id="btn-menu-celular" class="md:hidden text-2xl text-gray-600 hover:text-secundario">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="btn-login" class="text-gray-600 hover:text-secundario text-xl"><i class="fa fa-cog"></i></button>
+                    </div>
+                </div>
+                
+                <nav class="hidden md:flex gap-6 font-medium mt-4 justify-center flex-wrap">
+                    <button class="cat-botao ativa text-secundario border-b-2 border-secundario pb-1" data-cat="todos">Início</button>
+                    <button class="cat-botao hover:text-secundario" data-cat="ferramentas">Ferramentas</button>
+                    <button class="cat-botao hover:text-secundario" data-cat="moldes">Moldes</button>
+                    <button class="cat-botao hover:text-secundario" data-cat="cortadores">Cortadores</button>
+                    <button class="cat-botao hover:text-secundario" data-cat="conjuntos">Conjuntos</button>
+                    <button class="cat-botao hover:text-secundario" data-cat="natal">Natal</button>
+                    <button class="cat-botao hover:text-secundario" data-cat="joias">Joias</button>
+                </nav>
+                
+                <nav id="menu-celular" class="menu-celular md:hidden mt-3 border-t pt-3">
+                    <div class="flex flex-col gap-2">
+                        <button class="cat-botao ativa text-secundario py-2 border-b border-gray-100" data-cat="todos">Início</button>
+                        <button class="cat-botao py-2 text-gray-700" data-cat="ferramentas">Ferramentas</button>
+                        <button class="cat-botao py-2 text-gray-700" data-cat="moldes">Moldes</button>
+                        <button class="cat-botao py-2 text-gray-700" data-cat="cortadores">Cortadores</button>
+                        <button class="cat-botao py-2 text-gray-700" data-cat="conjuntos">Conjuntos</button>
+                        <button class="cat-botao py-2 text-gray-700" data-cat="natal">Natal</button>
+                        <button class="cat-botao py-2 text-gray-700" data-cat="joias">Joias</button>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <section class="bg-primario-10 py-16 mb-8">
+            <div class="container mx-auto px-4 text-center">
+                <h1 id="banner-titulo" class="text-3xl font-bold text-secundario mb-4">Moldes e Cortadores para Cerâmica</h1>
+                <p id="banner-subtitulo" class="text-lg mb-8 max-w-2xl mx-auto">Produtos de qualidade para dar forma à sua arte</p>
+                <a href="https://instagram.com/moldae_ceramica" target="_blank" class="inline-flex items-center gap-2 bg-[#E4405F] text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90">
+                    <i class="fa fa-instagram"></i> Peça pelo Instagram @moldae_ceramica
+                </a>
+            </div>
+        </section>
+
+        <main class="container mx-auto px-4 pb-16">
+            <div class="categoria-conteudo ativa" id="cat-todos"><h2 class="text-2xl font-semibold mb-6">Todos os Produtos</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="grade-todos"></div></div>
+            <div class="categoria-conteudo" id="cat-ferramentas"><h2 class="text-2xl font-semibold mb-6">Ferramentas</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="grade-ferramentas"></div></div>
+            <div class="categoria-conteudo" id="cat-moldes"><h2 class="text-2xl font-semibold mb-6">Moldes</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="grade-moldes"></div></div>
+            <div class="categoria-conteudo" id="cat-cortadores"><h2 class="text-2xl font-semibold mb-6">Cortadores</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="grade-cortadores"></div></div>
+            <div class="categoria-conteudo" id="cat-conjuntos"><h2 class="text-2xl font-semibold mb-6">Conjuntos</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="grade-conjuntos"></div></div>
+            <div class="categoria-conteudo" id="cat-natal"><h2 class="text-2xl font-semibold mb-6">Natal</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="grade-natal"></div></div>
+            <div class="categoria-conteudo" id="cat-joias"><h2 class="text-2xl font-semibold mb-6">Joias</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="grade-joias"></div></div>
+        </main>
+
+        <footer class="bg-secundario text-white py-10">
+            <div class="container mx-auto px-4 text-center">
+                <a href="https://instagram.com/moldae_ceramica" target="_blank" class="inline-flex items-center gap-2 text-xl hover:opacity-90">
+                    <i class="fa fa-instagram"></i> @moldae_ceramica
+                </a>
+                <p class="mt-6 text-sm opacity-70">© 2026 Moldae Cerâmica</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
 let dados = DADOS_SITE;
+
 const btnMenuCelular = document.getElementById('btn-menu-celular');
 const menuCelular = document.getElementById('menu-celular');
 btnMenuCelular.onclick = () => {
-menuCelular.classList.toggle('aberto');
-const icone = btnMenuCelular.querySelector('i');
-icone.classList.toggle('fa-bars');
-icone.classList.toggle('fa-times');
+    menuCelular.classList.toggle('aberto');
+    const icone = btnMenuCelular.querySelector('i');
+    icone.classList.toggle('fa-bars');
+    icone.classList.toggle('fa-times');
 };
+
 function gerarCardProduto(p) {
-const temTamanhos = p.temTamanhos && p.tamanhos && p.tamanhos.length > 0;
-let htmlTamanhos = '';
-if (temTamanhos) {
-htmlTamanhos = `
-<div class="mb-4"> <label class="block text-sm font-medium text-gray-700 mb-2">Escolha o tamanho:</label> <select class="w-full border border-gray-300 rounded-lg p-2 text-gray-700 bg-white tamanho-select" data-produto="${p.id}"> <option value="">— Selecione —</option> ${p.tamanhos.map(t => `<option value="${t.codigo}">${t.nome}</option>`).join('')} </select> </div> <div class="mb-4 text-sm text-gray-500 tamanho-texto" id="tamanho-texto-${p.id}" style="display: none;"> <strong>Escolhido:</strong> <span id="nome-tamanho-${p.id}"></span> </div>`; } return ` <div class="bg-white rounded-xl overflow-hidden shadow cartao-produto"> <img src="${p.imagem}" alt="${p.nome}" class="w-full h-64 object-cover"> <div class="p-4"> <h3 class="font-semibold text-lg mb-2">${p.nome}</h3> <p class="text-gray-600 text-sm mb-4 whitespace-pre-line">${p.descricao}</p> ${htmlTamanhos} <a href="https://instagram.com/moldae_ceramica" target="_blank" class="block w-full text-center bg-[#E4405F] text-white py-2 rounded-lg hover:bg-opacity-90 link-pedir" data-produto="${p.id}"> <i class="fa fa-instagram"></i> Pedir no Instagram </a> </div> </div>`;
+    const temTamanhos = p.temTamanhos && p.tamanhos && p.tamanhos.length > 0;
+    
+    let htmlTamanhos = '';
+    if (temTamanhos) {
+        htmlTamanhos = `
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Escolha o tamanho:</label>
+            <select class="w-full border border-gray-300 rounded-lg p-2 text-gray-700 bg-white tamanho-select" data-produto="${p.id}">
+                <option value="">— Selecione —</option>
+                ${p.tamanhos.map(t => `<option value="${t.codigo}">${t.nome}</option>`).join('')}
+            </select>
+        </div>
+        <div class="mb-4 text-sm text-gray-500 tamanho-texto" id="tamanho-texto-${p.id}" style="display: none;">
+            <strong>Escolhido:</strong> <span id="nome-tamanho-${p.id}"></span>
+        </div>`;
+    }
+
+    return `
+    <div class="bg-white rounded-xl overflow-hidden shadow cartao-produto">
+        <img src="${p.imagem}" alt="${p.nome}" class="w-full h-64 object-cover">
+        <div class="p-4">
+            <h3 class="font-semibold text-lg mb-2">${p.nome}</h3>
+            <p class="text-gray-600 text-sm mb-4 whitespace-pre-line">${p.descricao}</p>
+            ${htmlTamanhos}
+            <a href="https://instagram.com/moldae_ceramica" target="_blank" 
+               class="block w-full text-center bg-[#E4405F] text-white py-2 rounded-lg hover:bg-opacity-90 link-pedir"
+               data-produto="${p.id}">
+                <i class="fa fa-instagram"></i> Pedir no Instagram
+            </a>
+        </div>
+    </div>`;
 }
+
 function renderizar() {
-const grades = {
-todos: document.getElementById('grade-todos'),
-ferramentas: document.getElementById('grade-ferramentas'),
-moldes: document.getElementById('grade-moldes'),
-cortadores: document.getElementById('grade-cortadores'),
-conjuntos: document.getElementById('grade-conjuntos'),
-natal: document.getElementById('grade-natal'),
-joias: document.getElementById('grade-joias')
-};
-Object.values(grades).forEach(g => g.innerHTML = '');
-dados.produtos.forEach(p => {
-const card = gerarCardProduto(p);
-grades.todos.innerHTML += card;
-if (grades[p.categoria]) grades[p.categoria].innerHTML += card;
-});
-Object.entries(grades).forEach(([cat, el]) => {
-if (!el.innerHTML) el.innerHTML = '<p class="col-span-full text-center text-gray-400 py-8">Nenhum produto nesta categoria ainda.</p>';
-});
-document.querySelectorAll('.tamanho-select').forEach(select => {
-select.onchange = function() {
-const prodId = this.dataset.produto;
-const valor = this.value;
-const produto = dados.produtos.find(p => p.id == prodId);
-const linkEl = document.querySelector(.link-pedir[data-produto="${prodId}"]);
-const textoEl = document.getElementById(tamanho-texto-${prodId});
-const nomeEl = document.getElementById(nome-tamanho-${prodId});
-if (valor && produto) {
-const tamanho = produto.tamanhos.find(t => t.codigo === valor);
-if (tamanho) {
-textoEl.style.display = 'block';
-nomeEl.textContent = tamanho.nome;
-const mensagem = Olá! Quero pedir: ${produto.nome} — ${tamanho.nome};
-linkEl.href = https://instagram.com/moldae_ceramica?msg=${encodeURIComponent(mensagem)};
+    const grades = {
+        todos: document.getElementById('grade-todos'),
+        ferramentas: document.getElementById('grade-ferramentas'),
+        moldes: document.getElementById('grade-moldes'),
+        cortadores: document.getElementById('grade-cortadores'),
+        conjuntos: document.getElementById('grade-conjuntos'),
+        natal: document.getElementById('grade-natal'),
+        joias: document.getElementById('grade-joias')
+    };
+    Object.values(grades).forEach(g => g.innerHTML = '');
+    
+    dados.produtos.forEach(p => {
+        const card = gerarCardProduto(p);
+        grades.todos.innerHTML += card;
+        if (grades[p.categoria]) grades[p.categoria].innerHTML += card;
+    });
+    
+    Object.entries(grades).forEach(([cat, el]) => {
+        if (!el.innerHTML) el.innerHTML = '<p class="col-span-full text-center text-gray-400 py-8">Nenhum produto nesta categoria ainda.</p>';
+    });
+
+    document.querySelectorAll('.tamanho-select').forEach(select => {
+        select.onchange = function() {
+            const prodId = this.dataset.produto;
+            const valor = this.value;
+            const produto = dados.produtos.find(p => p.id == prodId);
+            const linkEl = document.querySelector(`.link-pedir[data-produto="${prodId}"]`);
+            const textoEl = document.getElementById(`tamanho-texto-${prodId}`);
+            const nomeEl = document.getElementById(`nome-tamanho-${prodId}`);
+            
+            if (valor && produto) {
+                const tamanho = produto.tamanhos.find(t => t.codigo === valor);
+                if (tamanho) {
+                    textoEl.style.display = 'block';
+                    nomeEl.textContent = tamanho.nome;
+                    const mensagem = `Olá! Quero pedir: ${produto.nome} — ${tamanho.nome}`;
+                    linkEl.href = `https://instagram.com/moldae_ceramica?msg=${encodeURIComponent(mensagem)}`;
+                }
+            } else {
+                textoEl.style.display = 'none';
+                linkEl.href = `https://instagram.com/moldae_ceramica`;
+            }
+        };
+    });
 }
-} else {
-textoEl.style.display = 'none';
-linkEl.href = https://instagram.com/moldae_ceramica;
-}
-};
-});
-}
+
 function aplicarConfig() {
-document.documentElement.style.setProperty('--cor-primario', dados.config.corPrimaria);
-document.documentElement.style.setProperty('--cor-secundario', dados.config.corSecundaria);
-document.getElementById('logo-site').src = dados.config.logoUrl;
-document.getElementById('logo-site').style.height = dados.config.logoTamanho + 'px';
-document.getElementById('banner-titulo').textContent = dados.config.titulo;
-document.getElementById('banner-subtitulo').textContent = dados.config.subtitulo;
+    document.documentElement.style.setProperty('--cor-primario', dados.config.corPrimaria);
+    document.documentElement.style.setProperty('--cor-secundario', dados.config.corSecundaria);
+    document.getElementById('logo-site').src = dados.config.logoUrl;
+    document.getElementById('logo-site').style.height = dados.config.logoTamanho + 'px';
+    document.getElementById('banner-titulo').textContent = dados.config.titulo;
+    document.getElementById('banner-subtitulo').textContent = dados.config.subtitulo;
 }
+
 document.querySelectorAll('.cat-botao').forEach(btn => {
-btn.onclick = () => {
-document.querySelectorAll('.cat-botao').forEach(b => {
-b.classList.remove('ativa', 'text-secundario', 'border-b-2', 'border-secundario', 'pb-1');
-if (b.closest('#menu-celular')) b.classList.add('text-gray-700');
+    btn.onclick = () => {
+        document.querySelectorAll('.cat-botao').forEach(b => {
+            b.classList.remove('ativa', 'text-secundario', 'border-b-2', 'border-secundario', 'pb-1');
+            if (b.closest('#menu-celular')) b.classList.add('text-gray-700');
+        });
+        btn.classList.add('ativa', 'text-secundario');
+        if (!btn.closest('#menu-celular')) btn.classList.add('border-b-2', 'border-secundario', 'pb-1');
+        document.querySelectorAll('.categoria-conteudo').forEach(c => c.classList.remove('ativa'));
+        document.getElementById('cat-' + btn.dataset.cat).classList.add('ativa');
+        
+        if (menuCelular.classList.contains('aberto')) {
+            menuCelular.classList.remove('aberto');
+            const icone = btnMenuCelular.querySelector('i');
+            icone.classList.remove('fa-times');
+            icone.classList.add('fa-bars');
+        }
+    };
 });
-btn.classList.add('ativa', 'text-secundario');
-if (!btn.closest('#menu-celular')) btn.classList.add('border-b-2', 'border-secundario', 'pb-1');
-document.querySelectorAll('.categoria-conteudo').forEach(c => c.classList.remove('ativa'));
-document.getElementById('cat-' + btn.dataset.cat).classList.add('ativa');
-if (menuCelular.classList.contains('aberto')) {
-menuCelular.classList.remove('aberto');
-const icone = btnMenuCelular.querySelector('i');
-icone.classList.remove('fa-times');
-icone.classList.add('fa-bars');
-}
-};
-});
+
 renderizar();
 aplicarConfig();
 </script>
-</body> </html>"
+</body>
+</html>
