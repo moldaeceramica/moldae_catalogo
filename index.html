@@ -37,7 +37,7 @@
         .text-secundario { color: var(--cor-secundario); }
         .border-secundario { border-color: var(--cor-secundario); }
         .menu-celular { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-        .menu-celular.aberto { max-height: 300px; }
+        .menu-celular.aberto { max-height: 400px; }
     </style>
 </head>
 <body class="bg-fundo text-texto">
@@ -48,7 +48,7 @@ const DADOS_SITE = {
     config: {
         logoUrl: 'https://i.imgur.com/rNMwfDx.png',
         logoTamanho: 64,
-        titulo: 'Moldes e Cortadores para Cerâmica',
+        titulo: 'Moldae Cerâmica | Moldes e Cortadores',
         subtitulo: 'Produtos de qualidade para dar forma à sua arte',
         corPrimaria: '#d4a574',
         corSecundaria: '#8b5a2b'
@@ -59,35 +59,35 @@ const DADOS_SITE = {
             nome: 'Molde Manteigueira Francesa',
             descricao: 'Kit Molde para Manteigueira francesa. Acompanha: 2 peças: 1x Molde 1x Cortador',
             categoria: 'moldes',
-            imagem: 'https://scontent-gru1-1.xx.fbcdn.net/v/t39.30808-6/825292619_10235672214690707_1594651004314722073_n.jpg?stp=dst-jpg_tt6&cstp=mx768x972&ctp=s768x972&_nc_cat=101&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeFN9yQC8CMF_IZX0cjC3X9iINnZVx2fqGwg2dlXHZ-obNgjLnSv9-Oo0xdp3BHCC4Q&_nc_ohc=vZdNNrOp65MQ7kNvwEHIRvs&_nc_oc=AdoqCbvZRz2inqvPPqKOQsFoyG3MYDDGVw4YSl9kF6dKHrf8VFSnhbzWEo4XmJXk8bw&_nc_zt=23&_nc_ht=scontent-gru1-1.xx&_nc_gid=1oQqg6l9cLeUebGfwk-d-A&_nc_ss=7b2a8&oh=00_AQN3HLVbUP7uZFod875P-JZfreWiVReONLA4L1MyUVCb6A&oe=6AC58F67'
+            imagem: 'https://scontent-gru1-1.xx.fbcdn.net/v/t39.30808-6/825292619_10235672214690707_1594651004314722073_n.jpg?stp=dst-jpg_tt6&cstp=mx768x972&ctp=s768x972'
         },
         {
             id: 2,
             nome: 'Suporte para amostras de esmalte (Redondo)',
             descricao: 'Suporte para amostras de esmalte. (personalizável) Para disquinhos de até 55mm',
             categoria: 'ferramentas',
-            imagem: 'https://scontent-gru2-2.xx.fbcdn.net/v/t39.30808-6/825353316_10235660281072374_1576819588531748826_n.jpg?stp=dst-jpg_tt6&cstp=mx1024x765&ctp=s1024x765&_nc_cat=102&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeF4K4doXO2PccNKeso9kOmSQIw-OTIi7P9AjD45MiLs_xFqe8uHaM5YP2Kt4I6LRfs&_nc_ohc=ruph4FwrI1gQ7kNvwENjuC9&_nc_oc=AdpocXh27CU0AY2qBaRposmX9tuNDo68ZaaHz1KFhMWxBRpOXNqJNpWGkNbpA2CZoII&_nc_zt=23&_nc_ht=scontent-gru2-2.xx&_nc_gid=OhW3ZR4tBHFA7ICVSggwHw&_nc_ss=7b2a8&oh=00_AQM60qV0Ewc2TdXXoPn_Gi7mVanBvaG1QVtzeBHM0hIXaQ&oe=6AC5783C'
+            imagem: 'https://scontent-gru2-2.xx.fbcdn.net/v/t39.30808-6/825353316_10235660281072374_1576819588531748826_n.jpg?stp=dst-jpg_tt6&cstp=mx1024x765&ctp=s1024x765'
         },
         {
             id: 3,
             nome: 'Suporte para amostras de esmalte',
             descricao: 'Suporte para amostras de esmalte. (Formato cartão) Personalizável com sua logo/nome',
             categoria: 'ferramentas',
-            imagem: 'https://scontent-gru2-2.xx.fbcdn.net/v/t39.30808-6/825859712_10235660551999147_4705664171741068315_n.jpg?stp=dst-jpg_tt6&cstp=mx1024x765&ctp=s1024x765&_nc_cat=105&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeEKb3VVjhC2Ua9tzOPPWui4BrffnZfmhG4Gt9-dl-aEbpTyF61iD2p0RjHEJN2zx8Q&_nc_ohc=TJ9_a-4eeNsQ7kNvwHdks8m&_nc_oc=AdoEQwt6A3SVQYhM_OWVk2EQ3b9Vdlyh9LVQci4uOis4caPQAWpwvSUeEPSnRfOmUM4&_nc_zt=23&_nc_ht=scontent-gru2-2.xx&_nc_gid=NRl10iHTlMTZpSBPFYZ_NA&_nc_ss=7b2a8&oh=00_AQPVNFemE0gHvptfMuaXAnrabacE_s_PvZ9j8NBF0TyRmg&oe=6AC58061'
+            imagem: 'https://scontent-gru2-2.xx.fbcdn.net/v/t39.30808-6/825859712_10235660551999147_4705664171741068315_n.jpg?stp=dst-jpg_tt6&cstp=mx1024x765&ctp=s1024x765'
         },
         {
             id: 4,
             nome: 'Molde Bowl Banana ** Exclusivo',
             descricao: 'Bowl Banana.\nModelo exclusivo Moldaê\nTamanho: 20cm',
             categoria: 'moldes',
-            imagem: 'https://scontent-gru1-2.xx.fbcdn.net/v/t39.30808-6/825340300_10235624097327803_6440314713724064118_n.jpg?stp=dst-jpg_tt6&cstp=mx768x1024&ctp=s768x1024&_nc_cat=110&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeHX-HjPftCLdW6xAlxwrc5t1Z3wBntGgZXVnfAGe0aBlc3XgFmEUwfX8C6R_tiR0Ss&_nc_ohc=qs7hWhNDC0sQ7kNvwGILOik&_nc_oc=AdqggXuvhR5JOyiEbKZDL5MHk5PBXWvK0Hg7akA8fC53EnWZLPV2DUZS0EkvxUdXB8w&_nc_zt=23&_nc_ht=scontent-gru1-2.xx&_nc_gid=x5ETr9QykEPnDLQwttPrMw&_nc_ss=7b2a8&oh=00_AQMdBZasa6Ii6qGyIDLnnbjBVXhUhn4CgoKe_VrJGE32tQ&oe=6AC5A224'
+            imagem: 'https://scontent-gru1-2.xx.fbcdn.net/v/t39.30808-6/825340300_10235624097327803_6440314713724064118_n.jpg?stp=dst-jpg_tt6&cstp=mx768x1024&ctp=s768x1024'
         },
         {
             id: 5,
             nome: 'Kit Moldes Para Conjunto Café/Lanche',
             descricao: 'Kit de moldes para montar conjunto. Acompanha: 3 moldes.',
             categoria: 'conjuntos',
-            imagem: 'https://scontent-gru1-2.xx.fbcdn.net/v/t39.30808-6/817846324_10235622387685063_401069051551442139_n.jpg?stp=dst-jpg_tt6&cstp=mx768x1024&ctp=s768x1024&_nc_cat=100&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeHCbB4-HcAiOJIZd33mor6cfia616N2B0p-JrrXo3YHSljldBQZX5WZMGYVuwbin64&_nc_ohc=j2-wIpxYUy4Q7kNvwHAHQ4t&_nc_oc=Adrxe6NbCBBWDZZgIcK1lIEebl_MLpZA-jVX5ygHNbYkgw4yznyEYwreUK-Ar0FLTvw&_nc_zt=23&_nc_ht=scontent-gru1-2.xx&_nc_gid=6TcEdg11hWrx6y1GfhTSIw&_nc_ss=7b2a8&oh=00_AQMPu1CA9pscfA7zXoxb41CmuGjB2wgkz5WZNgPHNPt5iw&oe=6AC590C2'
+            imagem: 'https://scontent-gru1-2.xx.fbcdn.net/v/t39.30808-6/817846324_10235622387685063_401069051551442139_n.jpg?stp=dst-jpg_tt6&cstp=mx768x1024&ctp=s768x1024'
         },
         {
             id: 6,
@@ -115,7 +115,7 @@ const DADOS_SITE = {
             nome: 'Cortador para Brinco de Cerâmica',
             descricao: 'Cortador para Brincos. Acompanha 2 peças.',
             categoria: 'cortadores',
-            imagem: 'https://scontent-gru2-1.xx.fbcdn.net/v/t39.30808-6/829797686_10235695571554614_8010631770598960752_n.jpg?stp=dst-jpg_tt6&cstp=mx1195x896&ctp=s1195x896&_nc_cat=109&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeGj2apH9aBiFXkDBQF_95FAfqmlWvfcKTh-qaVa99wpOB0QQGpdxKz556gttqLoL5Y&_nc_ohc=6BSdr6eKLBoQ7kNvwFEfzlM&_nc_oc=Adq5z32qCeB-nxeWuRnyqzuwhsj54UVJmy4PYdjhQv6ZDcXbKH2LrvTsBlxHMidmitc&_nc_zt=23&_nc_ht=scontent-gru2-1.xx&_nc_gid=IYtGwLafqW1LTdA8ngCPow&_nc_ss=7b2a8&oh=00_AQNtKChoAJORsnmoBJSQKZpVg8M1VCRACCLK4SwVvZLZnQ&oe=6AC5A82E'
+            imagem: 'https://scontent-gru2-1.xx.fbcdn.net/v/t39.30808-6/829797686_10235695571554614_8010631770598960752_n.jpg?stp=dst-jpg_tt6&cstp=mx1195x896&ctp=s1195x896'
         },
         {
             id: 10,
@@ -181,14 +181,18 @@ const DADOS_SITE = {
                     </div>
                 </div>
                 
-                <nav class="hidden md:flex gap-8 font-medium mt-4 justify-center">
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex gap-6 font-medium mt-4 justify-center flex-wrap">
                     <button class="cat-botao ativa text-secundario border-b-2 border-secundario pb-1" data-cat="todos">Início</button>
                     <button class="cat-botao hover:text-secundario" data-cat="ferramentas">Ferramentas</button>
                     <button class="cat-botao hover:text-secundario" data-cat="moldes">Moldes</button>
                     <button class="cat-botao hover:text-secundario" data-cat="cortadores">Cortadores</button>
                     <button class="cat-botao hover:text-secundario" data-cat="conjuntos">Conjuntos</button>
+                    <button class="cat-botao hover:text-secundario" data-cat="natal">Natal</button>
+                    <button class="cat-botao hover:text-secundario" data-cat="joias">Joias</button>
                 </nav>
                 
+                <!-- Menu Celular -->
                 <nav id="menu-celular" class="menu-celular md:hidden mt-3 border-t pt-3">
                     <div class="flex flex-col gap-2">
                         <button class="cat-botao ativa text-secundario py-2 border-b border-gray-100" data-cat="todos">Início</button>
@@ -196,6 +200,8 @@ const DADOS_SITE = {
                         <button class="cat-botao py-2 text-gray-700" data-cat="moldes">Moldes</button>
                         <button class="cat-botao py-2 text-gray-700" data-cat="cortadores">Cortadores</button>
                         <button class="cat-botao py-2 text-gray-700" data-cat="conjuntos">Conjuntos</button>
+                        <button class="cat-botao py-2 text-gray-700" data-cat="natal">Natal</button>
+                        <button class="cat-botao py-2 text-gray-700" data-cat="joias">Joias</button>
                     </div>
                 </nav>
             </div>
@@ -217,6 +223,8 @@ const DADOS_SITE = {
             <div class="categoria-conteudo" id="cat-moldes"><h2 class="text-2xl font-semibold mb-6">Moldes</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="grade-moldes"></div></div>
             <div class="categoria-conteudo" id="cat-cortadores"><h2 class="text-2xl font-semibold mb-6">Cortadores</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="grade-cortadores"></div></div>
             <div class="categoria-conteudo" id="cat-conjuntos"><h2 class="text-2xl font-semibold mb-6">Conjuntos</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="grade-conjuntos"></div></div>
+            <div class="categoria-conteudo" id="cat-natal"><h2 class="text-2xl font-semibold mb-6">Natal</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="grade-natal"></div></div>
+            <div class="categoria-conteudo" id="cat-joias"><h2 class="text-2xl font-semibold mb-6">Joias</h2><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="grade-joias"></div></div>
         </main>
 
         <footer class="bg-secundario text-white py-10">
@@ -281,7 +289,9 @@ function renderizar() {
         ferramentas: document.getElementById('grade-ferramentas'),
         moldes: document.getElementById('grade-moldes'),
         cortadores: document.getElementById('grade-cortadores'),
-        conjuntos: document.getElementById('grade-conjuntos')
+        conjuntos: document.getElementById('grade-conjuntos'),
+        natal: document.getElementById('grade-natal'),
+        joias: document.getElementById('grade-joias')
     };
     Object.values(grades).forEach(g => g.innerHTML = '');
     
