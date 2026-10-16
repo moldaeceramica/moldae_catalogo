@@ -38,10 +38,17 @@
         .border-secundario { border-color: var(--cor-secundario); }
         .menu-celular { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
         .menu-celular.aberto { max-height: 450px; }
+        /* Estilo do banner destaque */
+        .banner-destaque {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .banner-destaque:hover {
+            transform: scale(1.01);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
     </style>
 </head>
 <body class="bg-fundo text-texto">
-
 <script>
 const DADOS_SITE = {
     credenciais: { usuario: 'Rhode', senha: 'Island' },
